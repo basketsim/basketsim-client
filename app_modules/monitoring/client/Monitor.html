@@ -1,0 +1,55 @@
+<template name="Monitor">
+  <div class="row">
+    <!-- Training Logs -->
+    <div class="col-xs-12 col-sm-6">
+      <div class="card white">
+        <div class="card-header tactics blue">
+          <div class="header-text white-text">
+              <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Training</div>
+          </div>
+        </div>
+        <div class="card-content" style="padding: 0px">
+          <div class="list-group">
+            {{#each logs 'training'}}
+              <a href="#" class="list-group-item">
+                <div>
+                  <span style="background-color:{{statusBadgeColor}}" class="badge"> </span>
+                  <span style="color:orange">{{momentCalendar this.createdAt}}</span>
+                  <span>{{this.tag}}: {{this.details}}</span>
+                  {{{statusBadge}}} <br>
+                  <span style="font-size: 11px">{{this.cid}}</span>
+                </div>
+              </a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finance Logs -->
+    <div class="col-xs-12 col-sm-6">
+      <div class="card white">
+        <div class="card-header tactics blue">
+          <div class="header-text white-text">
+              <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Weekly Finance</div>
+          </div>
+        </div>
+        <div class="card-content" style="padding: 0px">
+          <div class="list-group">
+            {{#each logs 'weekly-finance'}}
+              <a href="#" class="list-group-item">
+                <div>
+                  <span style="background-color:{{statusBadgeColor}}" class="badge"> </span>
+                  <span style="color:orange">{{momentCalendar this.createdAt}}</span>
+                  <span>{{this.tag}}: {{this.details}}</span>
+                  {{{statusBadge}}} <br>
+                  <span style="font-size: 11px">{{this.cid}}</span>
+                </div>
+              </a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

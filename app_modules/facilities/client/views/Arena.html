@@ -1,0 +1,51 @@
+<template name="Arena">
+  <div class="card white">
+    <div class="card-image-header arena">
+      <div class="card-title">Arena</div>
+    </div>
+    <div class="card-content black-text">
+      <div class="row">
+        <!--Ground -->
+        <div class="col-xs-6">
+          <span class="weight-800 arena-detail">Court Side:</span>
+          <span class="weight-800">{{size "court_side" arena arenaUpdate}}</span>
+        </div>
+        <div class="col-xs-6">
+          <span class="weight-800 arena-detail">Court End:</span>
+          <span class="weight-800">{{size "court_end" arena arenaUpdate}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <!--Balcony-->
+        <div class="col-xs-6">
+          <span class="weight-800 arena-detail">Balcony:</span>
+          <span class="weight-800">{{size "upper_level" arena arenaUpdate}}</span>
+        </div>
+        <div class="col-xs-6">
+          <span class="weight-800 arena-detail">VIP Boxes:</span>
+          <span class="weight-800">{{size "vip" arena arenaUpdate}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <span class="weight-800 arena-detail">Total:</span>
+          <span class="weight-800">{{size "total" arena arenaUpdate}}</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-action black-text" style="padding-left: 15px; padding-right: 15px;">
+      {{#if arenaUpdate}}
+        <div class="weight-400">
+          The arena is under development until {{completionDate arenaUpdate}}. <br>
+          During this time, your arena's capacity is reduced. <br>
+          The new capacity will be of {{newCapacity arenaUpdate arena}} seats. <br>
+          <button id="cancel-construction" class="btn-link">Cancel Construction</button>
+        </div>
+      {{else}}
+        {{>ArenaUpgrade arena=arena reactiveArenaUpdate=reactiveArenaUpdate}}
+      {{/if}}
+    </div>
+  </div>
+</template>

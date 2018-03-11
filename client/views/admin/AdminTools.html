@@ -1,0 +1,294 @@
+<template name="AdminTools">
+  <div class="row">
+    <!-- END SEASON UPDATES -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">End Season Updates</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class='season-age-players'>Age Players 1 year</button> <br>
+          <button style="margin-bottom:2px" class='remove-ageupdated-flag'>Remove Age Updated Flag</button> <br>
+          <button style="margin-bottom:2px" class='autopromote-youth'>Autopromote Youth</button> <br>
+          <button style="margin-bottom:2px" class='youth-wage-update'>Youth Wage Update</button> <br>
+          <button style="margin-bottom:2px" class='senior-wage-update'>Senior Wage Update</button> <br>
+          <button style="margin-bottom:2px" class='add-fitness'>Add Fitness</button> <br>
+          <button style="margin-bottom:2px" class='remove-wageupdate-flag'>Remove Wage Update Flag</button> <br>
+        </div>
+      </div>
+    </div>
+
+    <!-- START NEW SEASON UPDATES -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Start Season Updates</div>
+        </div>
+        <div class="card-content black-text">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- START NEW SEASON TOOLS -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Start Season Tools</div>
+        </div>
+        <div class="card-content black-text">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- LEAGUE - END SEASON -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">League - End Season</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class="newlegue-set-score-difference">Set Score Difference</button> <br>
+          <!--<button style="margin-bottom:2px" class="newlegue-validate">Validate Updates without altering db</button> <br>-->
+          <button style="margin-bottom:2px" class="newlegue-insert-playoff">Insert Playoff</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-send-rewards">Send money, fans, trophies</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-end-season">End Season (executes all updates)</button>
+          <br><br>
+          <button style="margin-bottom:2px" class="newlegue-test-set-score-difference">TEST RO: Set Score Difference</button> <br>
+          <!--<button style="margin-bottom:2px" class="newlegue-test-validate">TEST RO: Validate Updates without altering db</button> <br>-->
+          <button style="margin-bottom:2px" class="newlegue-test-insert-playoff">TEST RO: Insert Playoff</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-test-send-rewards">TEST RO: Send money, fans, trophies</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-test-end-season">TEST RO: End Season (executes all updates)</button> <br>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEAGUE - START SEASON -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">League - Start Season</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class="newlegue-set-leagues">Set new season</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-wildcards">Assign Wildcards</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-reshuffle">Reshuffle</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-update-competition-reference">Update competition reference</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-validate">Validate Season</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-schedule-matches">Schedule matches for new season</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-check-scheduled-matches">Check Sheduled Matches</button> <br>
+          <br>
+          <button style="margin-bottom:2px" class="newlegue-test-set-leagues">TEST RO: Set New Leagues</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-test-wildcards">TEST RO: Assign Wildcards</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-test-reshuffle">TEST RO: Reshuffle</button> <br>
+          <!--<button style="margin-bottom:2px" class="newlegue-test-set-leagues-validate">TEST RO: Validate new season</button> <br>-->
+          <button style="margin-bottom:2px" class="newlegue-test-schedule-matches">TEST RO: Schedule matches for new season</button> <br>
+          <button style="margin-bottom:2px" class="newlegue-test-check-scheduled-matches">TEST RO: Check Sheduled Matches</button> <br>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEAGUE - TOOLS -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">League - Tools</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class="reset-playoff">Reset Playoff</button> <br>
+          <button style="margin-bottom:2px" class="reschedule-playoff">Reschedule Playoff Matches</button> <br>
+          <button style="margin-bottom:2px" class="play-playoff">Play Playoff</button> <br>
+          <button style="margin-bottom:2px" class="end-playoff">Update/End Playoff</button> <br>
+          <button style="margin-bottom:2px" class="find-playoff-duplicates">Find Playoff Duplicates</button> <br>
+          <button style="margin-bottom:2px" class="count-bots">Count Bots</button> <br>
+          <button style="margin-bottom:2px" class="new-series-usa">New Series + M - USA</button> <br>
+          <button style="margin-bottom:2px" class="new-series-serbia">New Series + M - Serbia</button>
+          <button style="margin-bottom:2px" class="fix-duplicates">Fix duplicate teams</button>
+          <button style="margin-bottom:2px" class="fix-invalid-leagues">Fix invalid leagues</button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <!-- CUP - END SEASON -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Cup - End Seasons</div>
+        </div>
+        <div class="card-content black-text">
+<!--           <button style="margin-bottom:2px" class='test-end-cup'>End Cup (TEST)</button> <br>
+          <button style="margin-bottom:2px" class='end-cup'>End Cup</button> <br> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- CUP - START SEASON -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Cup - Start Season</div>
+        </div>
+        <div class="card-content black-text">
+          <!-- <button style="margin-bottom:2px" class='insert-cups'>Insert National Cups</button> <br> -->
+          <button style="margin-bottom:2px" class='insert-cup-season'>Insert Cup Season</button> <br>
+          <button style="margin-bottom:2px" class='cup-first-round'>Insert Cup First Round</button> <br>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUP - TOOLS -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Cup - Tools</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class='reset-cup-ro'>Reset Cup Ro</button> <br>
+          <button style="margin-bottom:2px" class='play-cup-round-all'>Play Cup Round All</button> <br>
+          <button style="margin-bottom:2px" class='play-cup-round-ro'>TEST RO: Play Cup Round </button> <br>
+          <button style="margin-bottom:2px" class='update-matches'>Update Played Cup Matches</button> <br>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- PLAYERS UPDATES -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Player Season Updates</div>
+        </div>
+        <div class="card-content black-text">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAYERS TOOLS -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Player Tools</div>
+        </div>
+        <div class="card-content black-text">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+  <!-- CRONS -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Crons</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class='play-testmatches'>Play Matches</button> <br>
+          <button style="margin-bottom:2px" class='run-update-bans'>Update Bans</button> <br>
+          <button style="margin-bottom:2px" class='run-finish-transfers'>Finish transfers</button> <br>
+          <button style="margin-bottom:2px" class='multiple-growth'>Multiple Growth</button> <br>
+          <button style="margin-bottom:2px" class='growth'>Growth</button> <br>
+          <button style="margin-bottom:2px" class='advance-calendar-week'>Advance Calendar Week</button> <br>
+          <button style="margin-bottom:2px" class='update-ev'>Update EV</button> <br>
+          <button style="margin-bottom:2px" class='remove-old-news'>Remove Old News</button> <br>
+          <button style="margin-bottom:2px" class='finance-weekly-updates'>Financial Weekly Update</button> <br>
+          <button style="margin-bottom:2px" class='facilities-arena-complete'>Complete Arena Construction</button> <br>
+          <button style="margin-bottom:2px" class='train-senior'>Run senior training</button> <br>
+          <button style="margin-bottom:2px" class='rerun-train-senior'>Rerun senior training (only if matches have played)</button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Info</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class='teams-per-country'>Active Teams/Country</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTS -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Tools</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class='insert-game-text'>Insert New Game Text </button> <br>
+          <button style="margin-bottom:2px" class='users-mark-removal'>Users: Mark removal </button> <br>
+          <button style="margin-bottom:2px" class='users-inspect-removal'>Users: Inspect Removal </button> <br>
+          <button style="margin-bottom:2px" class='users-remove'>Users: Remove </button> <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Matches Tools</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class='testmatch-asp-cup'>Create ASP Test Cup Match</button> <br>
+
+          <button style="margin-bottom:2px" class='delete-testmatches'>Delete Test Matches</button> <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">One Time Tools</div>
+        </div>
+        <div class="card-content black-text">
+          <button style="margin-bottom:2px" class='insert-missing-market-activity'>Insert missing market activity</button> <br>
+          <button style="margin-bottom:2px" class='migrate-achievements'>Migrate Achievements</button> <br>
+          <button style="margin-bottom:2px" class='add-test-matches'>Add Test Matches</button> <br>
+          <button style="margin-bottom:2px" class='change-dates'>Change dates</button> <br>
+          <button style="margin-bottom:2px" class='decode-names'>Decode names</button> <br>
+          <button style="margin-bottom:2px" class='full-names'>Add Full Names</button> <br>
+          <button style="margin-bottom:2px" class='run-test'>Run test matches</button> <br>
+          <button style="margin-bottom:2px" class='return-fans'>Return Fans</button> <br>
+          <button style="margin-bottom:2px" class='finish-previous-matches'>Finish previous matches</button> <br>
+          <button style="margin-bottom:2px" class='finish-previous-matches2'>Finish previous matches 2</button> <br>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card white">
+        <div class="card-header blue-grey darken-1">
+          <div class="card-title">Other Tools</div>
+        </div>
+        <div class="card-content black-text">
+          <form id="validate-email-form">
+            <div class="form-group">
+              <label for="tobevalidated">Email address to validate</label>
+              <input name="email" type="email" class="form-control" id="tobevalidated" aria-describedby="emailHelp" placeholder="Enter email to validate">
+              <input type="submit" id="validate-email" value="Validate Email">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

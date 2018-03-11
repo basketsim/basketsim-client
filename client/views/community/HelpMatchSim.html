@@ -1,0 +1,67 @@
+<template name="HelpMatchSim">
+{{>HelpMenu}}
+<div class="card white">
+  <div class="card-header red white-text">
+    <div class="card-title white-text">Match Simulation Engine</div>
+  </div>
+  <div class="card-content no-pad-top white black-text">
+    During a match, each team has around 90-100 attacking actions. An attacking action starts when a team gains possession and it ends either with a shot or a turnover.
+    <br><br>
+    Each action has a few phases - for each of them, one or more players contribute towards the success of the phase, while the defending team acts against it.
+    Also, each action is influenced by the match-abilities of your team. These abilities are based on the basic skills of your players, their energy, physical abilities, character, and very important, tactics.
+    Moreover, quickness, positioning and rebound skills are the sole basis for their defensive and offensive counterparts (defensive quickness, offensive positioning, etc). The tactics used can alter the ability in one phase of the game, while the other phases remain the same - hence the distinction.
+    <br><br>
+    Excluding other influencers, that are detailed in other chapters, here’s how the skills contribute to the match abilities. Skills are listed in order of their importance, but their ratio varies.
+    <br><br>
+    <ul>
+      <li>Possession - handling, passing, dribbling, experience</li>
+      <li>Stop Possession - defense, def_quickness, def_positioning, experience</li>
+      <li>Foul Avoidance - defense, def_quickness, def_positioning, experience</li>
+      <li>Assist Quality - passing, experience, off_quickness</li>
+      <li>Assisted 2P - assist quality (of the passing player), shooting, handling, off_positioning</li>
+      <li>Assisted 3P - assist quality (of the passing player), shooting, handling, off_positioning</li>
+      <li>Individual 2P - shooting, dribbling, off_quickness, experience</li>
+      <li>Individual 3P - shooting, off_positioning, off_quickness, experience</li>
+      <li>Man-to-man Defense - defense, def_quickness, def_positioning, experience</li>
+      <li>Zone Defense - defense, def_positioning, def_quickness, experience</li>
+    </ul>
+
+    Note: Man-to-man defense is effective against individual shots. Zone defense is effective against assisted shots. Every team play both in defense, but some tactics favour one or the other.
+
+    <h4>Attacking Phase I - Possession</h4>
+    The most common possession phase starts after some scored points, defensive rebound or turnover.
+    The possession plays over a few seconds, when it reach a “critical” point, or, to be less dramatic, a point where an outcome is needed. This outcome can be a turnover, a decisive pass (one that can turn into an assist) or an individual action followed by a shot. Also, this outcome is influenced by the skills of the player holding the ball at that specific moment. In most of the cases, this player will be either your PG, followed closely by the SG. The SF can also have a significant contribution here, while PF and C rarely get to be in this situation.
+    <br><br>
+    Now, first thing first, a turnover has to be avoided. This is decided by the possession ability of the player having the possession. As mentioned, your guards will lead most of the attacks, so they must have very high possession abilities. But, even with very high ability, they are the most prone to errors, so don’t be surprised of your stellar guards suffer more turnovers than a clumsy Center - the latter simply does not get so often into the situation of leading an attack where mistakes can be done.
+    In addition, your opponent’s combined Possession Stopping ability comes into play as well, negating as much as possible the skill of your players.
+    <br><br>
+    There is a case in which a possession can be led mostly by a C or PF and that’s after an offensive rebound. Same rules as above apply, but keep in mind the offensive rebounds are not so often as normal possessions, so over-training the possession ability of you big men might not be required.
+    <br><br>
+    Once the possession is successful and turnovers are avoided, the player handling the ball needs to decide if he’ll attempt a decisive pass or go for an individual action and shoot himself. This decision is based on the player position on the field (a SG will favour individual actions, while a PG passes), his skills, character and tactics. The important word here is “favour”, as each player will still use a combination of assists and individual shots during a match.
+
+    <h4>Attacking Phase II - Shooting</h4>
+    Based on the choice of the possession player, the shot will either be assisted (if the player passes) or individual. The success of the shot is determined by the the specific shooting ability of the player, combined with the assist quality, if that’s the case. Additionally, for assisted shots, the Zone Defense of the opponent will disrupt your passer and shooter, while for individual shots, the Man-to-Man defense will act as deterrent.
+    <br><br>
+    This phase has one of the next outcomes:
+    <ul>
+      <li>A block - followed by an out of bounds ball or a rebound</li>
+      <li>A foul - followed by free throws</li>
+      <li>A scoring shot - followed by change of possession</li>
+      <li>A missed shot - followed by rebound.</li>
+    </ul>
+
+    Most of these steps are self explanatory. In the case of free throws, if the last attempt is missed a rebound will come next.
+
+    <h4>Rebounding Phase</h4>
+
+    As the name implies, whenever there is a missed or blocked shot, the teams will fight for the rebound. Due to having better positioned players, the defending team is favourite at winning the rebound. Main rebounders are the forwards, but guards can also have a contribution if the ball happens to bounce farther from the basket close to the zone where a guard would normally defend.
+    <br><br>
+    For the offensive team, the PF and C would be the main players fighting for the rebound.
+
+  </div>
+  <div class="card-action">
+    <a href="/help-and-rules/player-character">Previous - Player Character</a>
+    <a href="/help-and-rules/tactics">Next - Tactics</a>
+  </div>
+</div>
+</template>

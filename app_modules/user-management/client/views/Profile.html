@@ -1,0 +1,74 @@
+<template name="Profile">
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-image-header arena profile">
+          <div class="card-title">Edit Profile</div>
+        </div>
+        <div class="card-content black-text">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <h4 style="margin-top:0px">Manager</h4>
+              <table style="width:98%; margin-bottom:20px">
+                <tbody>
+                  <tr>
+                    <td class="profile-label">Email</td>
+                    <td class="profile-value"><input class="profile-email" style="width:100%" type="email" value={{email}}></td>
+                    <td class="profile-set" style="padding-left:5px!important"><a class="set-email discrete" href="#">SET</a></td>
+                  </tr>
+                  <tr>
+                    {{#if isVerified}}
+                      <td class="profile-label" style="color: #39a501;font-weight: 400; padding-bottom: 8px;">Account verified!</td>
+                    {{else}}
+                      <td class="profile-label" style="color: red;font-weight: 400; padding-bottom: 8px;">Account not verified</td>
+                      <td class="profile-label" style="padding-bottom: 8px;"><button id="send-verification-email" type="button" class="btn btn-link">Send verification email</button></td>
+                    {{/if}}
+                  </tr>
+                  <tr>
+                    <td class="profile-label">New Password</td>
+                    <td class="profile-value"><input class="profile-new-password" style="width:100%" type="password" placeholder="Insert new password"></td>
+                    <td class="profile-set" style="padding-left:5px!important"><a class="set-password discrete" href="#">SET</a></td>
+                  </tr>
+                  <tr>
+                    <td class="profile-label">Old Password</td>
+                    <td class="profile-value"><input class="profile-old-password" style="width:100%" type="password" placeholder="Verify old password"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <h4 style="margin-top:0px">Team</h4>
+              <table style="width:98%; margin-bottom:20px">
+                <tbody>
+                  <tr>
+                    <td class="profile-label">Team Name</td>
+                    <td class="profile-value"><input class="profile-team-name" style="width:100%" type="text" value={{team.name}}></td>
+                    <td class="profile-set" style="padding-left:5px!important"><a class="set-team-name discrete" href="#">SET</a></td>
+                  </tr>
+                  <tr>
+                    <td class="profile-label">Arena Name</td>
+                    <td class="profile-value"><input class="profile-arena-name" style="width:100%" type="text" value={{rdata.arena.arenaname}}></td>
+                    <td class="profile-set" style="padding-left:5px!important"><a class="set-arena-name discrete" href="#">SET</a></td>
+                  </tr>
+                  <tr>
+                    <td class="profile-label">Fan Club</td>
+                    <td class="profile-value"><input class="profile-fanclub-name" style="width:100%" type="text" value={{rdata.arena.cheer_name}}></td>
+                    <td class="profile-set" style="padding-left:5px!important"><a class="set-fanclub-name discrete" href="#">SET</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <h4 style="margin-top:0px"><a href="#" class="set-club-logo discrete">Change Club Logo</a></h4>
+              <a href="#">
+                <img class="set-club-logo" style="width:120px; height:120px" src="{{team.logo}}" alt="{{team.name}} logo">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</template>

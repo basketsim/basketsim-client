@@ -1,0 +1,338 @@
+/**
+ * Card relateds css
+ */
+.card {
+  position: relative;
+  /*overflow: hidden;*/
+  margin: 0rem 0 1rem 0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card .card-content {
+  padding: 20px;
+  border-radius: 0 0 2px 2px;
+  font-weight: 300;
+}
+
+.card .card-content.half-side-padding {
+  padding: 20px 10px 20px 10px;
+}
+.card .card-content .card-title {
+  line-height: 48px;
+  font-weight: 400;
+}
+.card .card-content .content-title {
+  font-weight: 400;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+.card .card-image {
+    padding: 15px 40px 15px 40px;
+}
+
+.card .card-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.card .card-action {
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 20px;
+  color: #ffab40;
+  font-size: 14px;
+}
+.card .card-action a{
+  color: #ffab40;
+  text-decoration: none;
+  margin-right: 15px;
+  display: inline-block;
+}
+.card .card-header {
+  padding: 20px 20px 0 20px;
+  border-radius: 0 0 2px 2px;
+  font-weight: 300;
+}
+.card .card-image-header{
+  height: 200px;
+  background-size: cover;
+  background-position-x: 72%;
+}
+.card .card-image-header.last-games{
+  background-image: url('/material/web-size/last_games.jpg');
+}
+.card .card-image-header.next-matches{
+  background-image: url('/material/web-size/next_matches.jpg');
+}
+.card .card-image-header.team-matches{
+  background-image: url('/material/web-size/matches.jpg');
+}
+.card .card-image-header.guestbook{
+  background-image: url('/material/web-size/guestbook.jpg');
+}
+.card .card-image-header.senior-team{
+  background-image: url('/material/web-size/senior_team.jpg');
+}
+.card .card-image-header.youth-team{
+  background-image: url('/material/web-size/youth_team.jpg');
+}
+.card .card-image-header.training{
+  background-image: url('/material/web-size/training.jpg');
+}
+.card .card-image-header.income{
+  background-image: url('/material/web-size/expenses.jpg');
+}
+.card .card-image-header.expenses{
+  background-image: url('/material/web-size/income.jpg');
+}
+.card .card-image-header.market{
+  background-image: url('/material/web-size/market.jpg');
+}
+.card .card-image-header.arena{
+  background-image: url('/material/web-size/arena.jpg');
+}
+.card .card-image-header.cheerleaders{
+  background-image: url('/material/web-size/cheerleaders.jpg');
+}
+.card .card-image-header .card-title{
+  padding-top: 160px;
+  padding-left: 20px;
+}
+.card .card-image-header .card-title.with-sub{
+  padding-top: 145px;
+  padding-left: 20px;
+}
+.card .card-image-header .card-subtitle{
+  font-weight: 200;
+  font-size: 14px;
+  margin: -5px 0 0 0;
+  padding-left: 20px;
+  color: white;
+}
+.card .card-header .header-image{
+    width: 120px;
+    height: 120px;
+    margin-right: 5px;
+    float: left;
+}
+.card .card-header .header-text{
+
+}
+.card .card-header .header-text .card-subtitle
+{
+  margin-top: -5px;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.card .card-action a:hover{
+  color: #ffd8a6;
+}
+
+.card table {
+    margin-bottom: 0px;
+}
+/**
+ * Collection
+ */
+.collection {
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  height: 90px;
+  border-color: #F4F4F4;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+.collection.playerSummary {
+  height: 110px;
+}
+.collection.smallCol{
+  margin: 0rem 0 1rem 0;
+  height: 70px;
+  background-color: inherit;
+  border-bottom-width: 1px;
+  padding-left: 10px;
+}
+
+.collection .col-avatar{
+  /*width: 100px;*/
+  height: inherit;
+  padding: 5px 10px 0 0;
+  float: left;
+}
+
+.collection .col-content {
+  height: auto;
+  padding: 0px 0 0 0;
+  float: left;
+  font-weight: 300;
+  margin-top: 7px;
+  overflow: hidden;
+}
+.collection .col-icon{
+  height: inherit;
+  padding: 0px 0 0 5px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 5px;
+  color: #FBA63E;
+  font-size: 28px;
+}
+.collection .col-icon a{
+  color: #FBA63E;
+  text-decoration: none;
+
+}
+
+.collection .col-content .col-title {
+  font-weight: 400;
+}
+.collection .col-content .col-subtitle {
+  font-weight: 200;
+  font-size: 14px;
+}
+.collection .col-content .col-main {
+  font-weight: 200;
+  font-size: 14px;
+}
+.circle {
+    border-radius: 50%;
+    background-color: #FEAA40;
+    width: 55px;
+    height: 55px;
+}
+.circle-small {
+    border-radius: 50%;
+    background-color: #F3862B;
+    width: 45px;
+    height: 45px;
+}
+
+/* COLORS */
+.blue-grey.darken-1 {
+  background-color: #0277bd !important;
+}
+.white-text {
+  color: #FFFFFF !important;
+}
+.white-text a {
+  color: #FFFFFF !important;
+}
+.black-text {
+  color: #000000 !important;
+}
+.white {
+  background-color: #FFFFFF !important;
+}
+.neutral {
+  background-color: #F4F4F4!important;
+  box-shadow: none!important;
+}
+.green.darken-2 {
+  background-color: #388e3c;
+}
+.green.darken-3 {
+  background-color: #2e7d32;
+}
+.red.darken-3 {
+    background-color: #c62828;
+}
+
+.z-depth-2 {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.z-depth-1 {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* HELPERS */
+.m-image {
+  height: 200px;
+}
+.title-image {
+  height: 55px;
+  display: inline-block;
+}
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.auto-flow {
+  overflow: auto;
+}
+.no-display {
+  display: none;
+}
+.shrink {
+  width: auto;
+}
+.shrink-left {
+  width: auto;
+  padding-right: 15px;
+}
+.blue-select {
+  background-color: #38435e;
+  color: #fda029;
+  font-weight: 800;
+  border: none;
+  margin-top: 2px;
+  margin-left: -8px;
+}
+.weight-400 {
+  font-weight: 400;
+}
+
+.weight-800 {
+  font-weight: 800;
+}
+
+/* COMPONENTS */
+.borderless-btn {
+  height: 18px!important;
+  padding: 0 4px 0 4px!important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: none;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.table-super-condensed > tbody > tr > td {
+  padding: 2px;
+}
+
+.shown {
+  max-height: 500px;
+}
+.hid {
+  max-height: 0px;
+}
+/*From bootsrap*/
+.btn-link {
+  padding: 0px;
+  color: #fda029;
+  font-weight: 800;
+  cursor: pointer;
+}
+.btn-link:hover, .btn-link:focus {
+  color: #fda029;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.form-control {
+  box-shadow: none;
+}
+input.is-danger {
+  border-color: #ff3860;
+}

@@ -1,0 +1,6 @@
+.idea
+public/img
+node_modules
+app_modules/crons/server/config.js
+.meteor
+.vscode

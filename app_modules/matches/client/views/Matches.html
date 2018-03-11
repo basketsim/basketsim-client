@@ -1,0 +1,27 @@
+<template name="Matches">
+  {{#each matches}}
+    <div class="col-xs-12 col-md-6" style="border-color: #E8E8E8; border-bottom-style: solid; border-bottom-width: 1px;">
+      <div class="collection simple">
+        <div class="col-avatar" style="padding-top:10px; max-width: 60px; ">
+          <div class="float-right">
+            <img class="img-responsive title-image float-right" src={{compLogo.img}} alt="League Trophy Icon" style="height:{{compLogo.height}}; {{compLogo.margin}}; {{compLogo.brightness}}">
+            <span class="competition-name">{{competition this.competition.collection}}</span>
+          </div>
+        </div>
+        <div class="col-content" style="max-width:75%; padding:5px;0px;5px;0px">
+          <div class="col-title matches"><a href="/teams/{{this.homeTeam.id._str}}">{{this.homeTeam.name}}</a> - <a href="/teams/{{this.awayTeam.id._str}}">{{this.awayTeam.name}}</a></div>
+          <div class="col-subtitle">
+            {{getTime this.dateTime.timestamp}} <br>
+            {{{matchState}}}
+
+<!--             {{#if this.state.finished}}
+              <div class="score"><a style="color:black" href="/matches/{{this._id}}">{{score}}</a></div>
+            {{else}}
+              {{hasTactics}}
+            {{/if}} -->
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</template>

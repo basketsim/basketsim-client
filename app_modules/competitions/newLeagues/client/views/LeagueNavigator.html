@@ -1,0 +1,46 @@
+<template name="LeagueNavigator">
+  <div class="nav-container">
+    <div class="row">
+
+      <div style="padding-right: 0px;" class="col-xs-7 col-sm-4 country-selector">
+        <span style="float:left; color: #474747;font-weight: 800;">Country:</span>
+        <div style="display:inline">
+          <select class="country-select league-selector">
+            {{{countries}}}
+          </select>
+        </div>
+      </div>
+
+      <div style="padding-left:0px; padding-right: 0px; padding-bottom:5px" class="col-xs-5 col-sm-3 season-selector">
+        <span style="float:left; color: #474747;font-weight: 800;">Season:</span>
+        <div style="display:inline">
+          <select class="season-select league-selector">
+            {{{seasons}}}
+          </select>
+        </div>
+      </div>
+
+      <div style="padding-right: 0px;" class="col-xs-7 col-sm-2 level-selector">
+        <span style="float:left; color: #474747;font-weight: 800;">Level:</span>
+        <div style="display:inline">
+          <select class="level-select league-selector">
+            {{{levels}}}
+          </select>
+        </div>
+      </div>
+
+      <div style="padding-left: 0px; padding-right: 0px;" class="col-xs-5 col-sm-2 series-selector">
+        <span style="float:left; color: #474747;font-weight: 800;">Series:</span>
+        <div style="display:inline">
+          <select class="series-select league-selector">
+            {{{series}}}
+          </select>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-1 series-selector">
+        <a class="btn btn-default sel-go blue" href="#" role="button">GO!</a>
+      </div>
+    </div>
+  </div>
+</template>

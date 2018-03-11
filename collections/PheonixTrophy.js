@@ -1,0 +1,1 @@
+global.PheonixTrophy = new Mongo.Collection('phoenix_trophy');

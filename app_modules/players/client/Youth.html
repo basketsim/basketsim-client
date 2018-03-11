@@ -1,0 +1,68 @@
+<template name="Youth">
+<!--   Hi, this is Players - Move tshirt to this page and to league page -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-image-header youth-team">
+          <div class="card-title">Youth Team</div>
+        </div>
+        <div class="card-content half-side-padding black-text">
+          <div class="mini-players">
+            {{#each players}}
+              {{> MiniPlayer player=this}}
+            {{/each}}
+          </div>
+        </div>
+        <div class="card-action">
+          <!-- <a href="#">Sort By </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="card">
+          <div class="card-header tactics blue">
+            <div class="header-text white-text">
+                <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Youth Investment</div>
+            </div>
+          </div>
+          <div class="card-content" style="padding: 10px 8px 10px 8px;">
+            <p>Every week your club organises the camp for talented players. The quality of possible talent depends on funding.</p>
+          </div>
+          <div class="card-action" style="padding: 10px 8px 10px 8px;">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                {{currentInvestment.text}} <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#" data-investment=0>No investment</a></li>
+                <li><a href="#" data-investment=25000>Weekly: 25.000$</a></li>
+                <li class="disabled"><a href="#" data-investment=50000>Weekly: 50.000$</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="card">
+          <div class="card-header tactics blue">
+            <div class="header-text white-text">
+                <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Get New Blood</div>
+            </div>
+          </div>
+          <div class="card-content" style="padding: 10px 8px 10px 8px;">
+            <p>Inspired by your recent performance, talented players from all across the region are eager to join your team. Decide who should get a chance to prove himself!</p>
+          </div>
+          <div class="card-action" style="padding: 10px 8px 10px 8px;">
+            <button class="btn btn-default btn-sm ibtn add-to-academy" type="submit">Add to youth academy</button>
+            <!-- <button class="btn btn-default btn-sm ibtn" type="submit">Sign young prospect </button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    {{#each players}}
+      {{>Player player=this youthTrainingList=getYouthTrainingList}}
+    {{/each}}
+</template>

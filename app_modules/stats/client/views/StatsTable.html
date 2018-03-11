@@ -1,0 +1,37 @@
+<template name="StatsTable">
+  <div class="table-responsive">
+    <table class="table stats-table table-condensed table-striped">
+      <thead>
+      <tr>
+        <th align="left"><div data-toggle="tooltip" data-placement="top" title="Range">Range</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Matches">MC</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Efficency(per match)">EFF</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Field Goals">FG</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Field Goals Attempts">FGA</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Field Goals Percentage">FG%</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="3 Points">3P</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="3 Points Attempts">3PA</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="3 Points Percentage">3P%</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="2 Points">2P</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="2 Points Attempts">2PA</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="2 Points Percentage">2P%</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Free Throws">FT</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Free Throws Attempts">FTA</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Free Throws Percentage">FT%</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Offensive Rebounds">ORB</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Defensive Rebounds">DRB</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Total Rebounds">TRB</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Assists">AST</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Steals">STL</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Blocks">BLK</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Turnovers">TO</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Fouls">FO</div></th>
+        <th align="center"><div style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Points">PTS</div></th>
+      </tr>
+      </thead>
+      <tbody>
+        {{{statsTable}}}
+      </tbody>
+    </table>
+  </div>
+</template>

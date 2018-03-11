@@ -1,0 +1,66 @@
+<template name="PlayerBidBox">
+  <div class="card white">
+    <div class="card-header tactics red">
+      <div class="header-text white-text">
+        <div class="card-title tactics">{{{player.name}}} {{{player.surname}}} is on sale!</div>
+      </div>
+    </div>
+    <div class="card-content half-side-padding black-text" style="padding: 15px 10px 15px 10px;">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6" style="font-size: 12px; font-weight: 400;">
+          <table class='table table-condensed'>
+            <thead></thead>
+            <tbody>
+              <tr>
+                <th style="width: 45%; border: none;">PRICE</th>
+                <td>{{price}} $</td>
+              </tr>
+              <tr>
+                <th style="width: 45%; border: none;">BIDDER</th>
+                <td>
+                  {{{bidder}}}
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 45%; border: none;">ENDS</th>
+                <td>
+                  {{expireDate}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+        {{#unless ownPlayer}}
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon">$</span>
+            <input type="text" value={{initBidValue}} class="form-control mk-price" aria-label="Listing Price">
+          </div>
+          {{#if bannedStatus.banned}}
+            <span style="font-weight: 400; color: #c21315;">You cannot bid while being banned from the market. {{bannedStatus.length}} days of ban remaining.</span>
+          {{else}}
+            {{#if isAccountVerified}}
+              <button style="margin-top:5px; width:100%; padding: 3px 10px; font-size:14px" class="btn btn-success btn-sm btn-bid" type="button" aria-haspopup="true" aria-expanded="false">BID!</button>
+            {{else}}
+              <span style="font-weight: 400">You need to verify your account before being able to bid on players.</span><br>
+              <td class="profile-label" style="padding-bottom: 8px;"><button id="send-verification-email" type="button" class="btn btn-link">Send verification email now!</button></td>
+            {{/if}}
+          {{/if}}
+          {{/unless}}
+        </div>
+      </div>
+    </div>
+    <div class="card-action" style="padding:10px">
+      {{#if ownPlayer}}
+        {{#if showCancelButton}}
+          <a href="#" class="cancel-transfer">Cancel transfer</a>
+        {{/if}}
+      {{else}}
+        <div class="row" style="margin-top: -5px;">
+          {{> TransferFlag transferID=transferID}}
+        </div>
+      {{/if}}
+      </div>
+  </div>
+
+</template>

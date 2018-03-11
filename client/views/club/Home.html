@@ -1,0 +1,149 @@
+<template name="Home">
+<div class="row">
+  <div class="col-xs-12 col-sm-8">
+    <div class="my-card">
+      <div style="margin:auto">
+        {{#if ownClub}}
+          <a href="/edit-profile"><img class="center-block" src="{{team.logo}}" alt="{{team.name}} logo"></a>
+        {{else}}
+          <img class="center-block" src="{{team.logo}}" alt="{{team.name}} logo">
+        {{/if}}
+        <h2 style="margin-top: 10px;font-size:28px; font-weight: 800;font-family: 'Roboto Slab';" class="centerText index-team-name">
+          {{#if ownClub}}
+            <a style="color: #424242;" title="{{team.name}} - Edit Profile" href="/edit-profile">{{team.name}}</a>
+          {{else}}
+            {{team.name}}
+          {{/if}}
+        </h2>
+        <div class="content color red">
+          <div class="row">
+            <div class="col-xs-6">
+              <table class="table table-condensed home">
+              <thead>
+                <tr>
+                  <th colspan="2">Club Info</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td>Manager:</td>
+                    <td class="pad">{{userinfo.username}}</td>
+                  </tr>
+                  <tr>
+                    <td>League:</td>
+                    <td class="pad"><a class="discrete dwhite" href="{{leaguePath}}">{{leagueName}}</a></td>
+                  </tr>
+                  <tr>
+                    <td>Arena:</td>
+                    <td class="pad arena-name">{{arena.arenaname}}</td>
+                  </tr>
+                  <tr>
+                    <td>Country:</td>
+                    <td class="pad">{{team.country}}</td>
+                  </tr>
+                  <tr>
+                    <td>Fans:</td>
+                    <td class="pad fans-name">{{arena.cheer_name}} ({{arena.fans}})</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-xs-6">
+              <table class="table table-condensed home">
+              <thead>
+                <tr>
+                  <th class="pad">Options</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td class="pad club-players"><a class="discrete dwhite" title="View Players" href="#">Players</a></td>
+                  </tr>
+                  <tr>
+                    <td class="pad club-coach"><a class="discrete dwhite" title="View Coach" href="#">Coach</a></td>
+                  </tr>
+                  <tr>
+                    <td class="pad club-matches"><a class="discrete dwhite" title="View Match History" href="#">Match History</a></td>
+                  </tr>
+                  <tr>
+                    <td class="pad club-stats"><a class="discrete dwhite" title="View Team Stats" href="#">Team Stats</a></td>
+                  </tr>
+                  <tr>
+                    <td class="pad"><a class="discrete dwhite" title="Edit Club Info" href="/transfers-history?team={{team._id._str}}">Transfers History</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-4">
+
+    <div class="card white">
+      <div class="card-image-header guestbook">
+        <div class="card-title">Guestbook</div>
+      </div>
+      <div class="card-content half-side-padding black-text">
+          <div class="guestbook">
+            <div class="gcontent">
+              <p>"Basketsim is back!"</p>
+              <p>"This is the first step of a beautiful journey"</p>
+              <p>"Hope you will join us!"</p>
+            </div>
+            <div class="info">
+              <!--<p>Goosy, 20 August 2015</p>-->
+            </div>
+          </div>
+      </div>
+      <div class="card-action">
+<!--         <a href="#">View All </a>
+        <a href="#">Write </a> -->
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--
+<div class="row">
+  <div class="col-xs-12">
+    <div class="my-card">
+      <div class="header">
+        <h3>Trophies and Flags</h3>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="row">
+<!--   <div class="col-xs-12 col-sm-8">
+    <div class="my-card">
+      <div class="header">
+        <h3>Statements</h3>
+      </div>
+    </div>
+  </div> -->
+  {{#if ownClub}}
+    <div class="col-xs-12 col-sm-12">
+      <div class="card white">
+        <div class="card-header tactics blue">
+          <div class="header-text white-text">
+            <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Latest events</div>
+          </div>
+        </div>
+        <div class="card-content" style="padding: 10px 8px 10px 8px; max-height: 220px; overflow: auto;">
+          {{> News}}
+        </div>
+      </div>
+    </div>
+  {{/if}}
+  <div class="col-xs-12">
+    {{>Achievements}}
+  </div>
+
+
+</div>
+
+</template>
+

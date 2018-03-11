@@ -1,0 +1,127 @@
+<template name="Player">
+  <!-- <div class="row"> -->
+      <div class="col-xs-12 col-sm-6">
+        <div class="card white">
+          <div class="card-header tactics blue" style="height:120px; padding:0">
+            <div class="header-image">
+              <img class="player-face" src="//faces.basketsim.com?id={{player._id._str}}" alt="">
+            </div>
+            <div class="header-text white-text">
+              <div class="card-title tactics" style="padding-bottom:10px">
+                {{#if isSenior}}
+                  <a href="/players/{{player._id._str}}">{{{player.name}}} {{{player.surname}}}</a>
+                {{else}}
+                  <a href="/youth/{{player._id._str}}">{{{player.name}}} {{{player.surname}}}</a>
+                {{/if}}
+              </div>
+              <div class="card-subtitle" style="font-size: 13px; margin:0px">
+                {{player.age}} y/o, {{player.height}} cm, {{getWeight}} kg, {{player.character}}, {{player.country}}<br>
+                {{{employmentInfo}}}
+                <br>
+                {{#if isSenior}}
+                  EV: {{dotify player.ev}} $
+                {{/if}}
+                {{talent player}}
+              </div>
+            </div>
+          </div>
+          <div class="card-content" style="font-size:12px; padding: 10px 8px 10px 8px;">
+            <div class="skills">
+              <div class="row">
+                <div class="col-xs-6" style="padding-right:0px; padding-left:5px">
+                  <table class="table table-condensed league">
+                    <tbody>
+                      <tr>
+                        <td class="skill">{{getSkillName "handling"}}:</td>
+                        <td style="color:{{hasTrainedColor 'handling'}}">{{getSkillString "handling"}} ({{getSkillInt "handling"}})</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "passing"}}:</td>
+                        <td style="color:{{hasTrainedColor 'passing'}}">{{getSkillString "passing"}} ({{getSkillInt "passing"}})</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "rebounds"}}:</td>
+                        <td style="color:{{hasTrainedColor 'rebounds'}}">{{getSkillString "rebounds"}} ({{getSkillInt "rebounds"}})</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "shooting"}}:</td>
+                        <td style="color:{{hasTrainedColor 'shooting'}}">{{getSkillString "shooting"}} ({{getSkillInt "shooting"}})</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "defense"}}:</td>
+                        <td style="color:{{hasTrainedColor 'defense'}}">{{getSkillString "defense"}} ({{getSkillInt "defense"}})</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "experience"}}:</td>
+                        <td>{{getSkillString "experience"}} ({{getSkillInt "experience"}})</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-xs-6" style="padding-right:5px; padding-left:5px">
+                  <table class="table table-condensed league">
+                    <tbody>
+                      <tr>
+                        <td class="skill">{{getSkillName "quickness"}}:</td>
+                        <td style="color:{{hasTrainedColor 'quickness'}}">{{getSkillString "quickness"}} ({{getSkillInt "quickness"}})</td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "dribbling"}}:</td>
+                        <td style="color:{{hasTrainedColor 'dribbling'}}">{{getSkillString "dribbling"}} ({{getSkillInt "dribbling"}})</td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "positioning"}}:</td>
+                        <td style="color:{{hasTrainedColor 'positioning'}}">{{getSkillString "positioning"}} ({{getSkillInt "positioning"}})</td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "freethrows"}}:</td>
+                        <td style="color:{{hasTrainedColor 'freethrow'}}">{{getSkillString "freethrow"}} ({{getSkillInt "freethrow"}})</td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "Work rate"}}:</td>
+                        <td>{{getSkillString "workrate"}} ({{getSkillInt "workrate"}})</td>
+                      </tr>
+                      <tr>
+                        <td class="skill">{{getSkillName "fitness"}}:</td>
+                        <td>{{getSkillString "fitness"}} {{getSkillInt "fitness"}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-action" style="padding:10px">
+          {{#if isSenior}}
+            <a href="/players/{{player._id._str}}">Details</a>
+            {{#if ownPlayer}}
+            <a href="#" class="fire-senior">Fire</a>
+            <span class="last-training">
+              {{#if player.lastTraining}}
+                Trained: {{capitalize player.lastTrainedSkill}} +{{player.lastTraining}}
+              {{/if}}
+            </span>
+            {{/if}}
+          {{else}}
+            {{#if youthHasTraining}}
+              <span style="color: #11006B; margin-right:5px">Training {{currTraining.skill}} for {{currTraining.weeks}} weeks</span>
+            {{else}}
+              <a href="/youth/{{player._id._str}}">Details</a>
+              <a href="#" class="set-training">Set Training</a>
+            {{/if}}
+            <!-- Set Training or displaying training info -->
+            <a href="#" class="promote">Promote</a>
+            {{#if ownPlayer}}
+            <a href="#" class="fire-junior">Fire</a>
+            {{/if}}
+          {{/if}}
+          </div>
+        </div>
+      </div>
+</template>

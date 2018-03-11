@@ -1,0 +1,156 @@
+<template name="Market">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card white">
+          <div class="card-image-header market">
+            <div class="card-title">Market - Search</div>
+          </div>
+
+        <div class="card-content black-text">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="card white">
+                <div class="card-header tactics blue" style="padding-top:0px; padding-bottom:0px">
+                  <div class="header-text white-text">
+                      <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Position</div>
+                  </div>
+                </div>
+                <div class="card-content" style="padding: 0px">
+                  <!-- <div class="list-group market-list"> -->
+                    <div class="scrollable position" style="height:241px; overflow:auto">
+                      <a href="#" data-multivalue="Any Position" class="list-group-item market sel not-first active">Any Position</a>
+                      <a href="#" data-multivalue="PG" class="list-group-item market sel">Point Guard</a>
+                      <a href="#" data-multivalue="SG" class="list-group-item market sel">Shooting Guard</a>
+                      <a href="#" data-multivalue="SF" class="list-group-item market sel">Small Forward</a>
+                      <a href="#" data-multivalue="PF" class="list-group-item market sel">Power Forward</a>
+                      <a href="#" data-multivalue="C" class="list-group-item market sel">Center</a>
+                    </div>
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="card white">
+                <div class="card-header tactics blue" style="padding-top:0px; padding-bottom:0px">
+                  <div class="header-text white-text">
+                      <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Character</div>
+                  </div>
+                </div>
+                <div class="card-content" style="padding: 0px">
+                  <!-- <div class="list-group market-list"> -->
+                  <div class="scrollable character" style="height:241px; overflow:auto">
+                    <a href="#" data-multivalue="Any Character" class="list-group-item market sel not-first active">Any Character</a>
+                    <a href="#" data-multivalue="Aggressive" class="list-group-item market sel">Aggressive</a>
+                    <a href="#" data-multivalue="Calm" class="list-group-item market sel">Calm</a>
+                    <a href="#" data-multivalue="Controversial" class="list-group-item market sel">Controversial</a>
+                    <a href="#" data-multivalue="Entertaining" class="list-group-item market sel">Entertaining</a>
+                    <a href="#" data-multivalue="Selfish" class="list-group-item market sel">Selfish</a>
+                    <a href="#" data-multivalue="Stable" class="list-group-item market sel">Stable</a>
+                    <a href="#" data-multivalue="Clumsy" class="list-group-item market sel">Clumsy</a>
+                    <a href="#" data-multivalue="Dirty" class="list-group-item market sel">Dirty</a>
+                    <a href="#" data-multivalue="Explosive" class="list-group-item market sel">Explosive</a>
+                    <a href="#" data-multivalue="Fragile" class="list-group-item market sel">Fragile</a>
+                    <a href="#" data-multivalue="Lazy" class="list-group-item market sel">Lazy</a>
+                    <a href="#" data-multivalue="Loyal" class="list-group-item market sel">Loyal</a>
+                    <a href="#" data-multivalue="Tough" class="list-group-item market sel">Tough</a>
+                    <a href="#" data-multivalue="Wise" class="list-group-item market sel">Wise</a>
+                  </div>
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="card white">
+                <div class="card-header tactics blue" style="padding-top:0px; padding-bottom:0px">
+                  <div class="header-text white-text">
+                      <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Country</div>
+                  </div>
+                </div>
+                <div class="card-content" style="padding: 0px">
+                  <!-- <div class="list-group market-list"> -->
+                    <div class="scrollable last country" style="height:241px; overflow:auto">
+                      <a href="#" data-multivalue="Any Country" class="list-group-item market sel not-first active">Any Country</a>
+                      {{#each countryList}}
+                      <a href="#" data-multivalue={{this}} class="list-group-item market sel">{{this}}</a>
+                      {{/each}}
+                    </div>
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="card white">
+                <div class="card-header tactics blue" style="padding-top:0px; padding-bottom:0px">
+                  <div class="header-text white-text">
+                      <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Filters</div>
+                  </div>
+                </div>
+                <div class="card-content white">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-2 skills-list">
+                          {{#each filters 'skill'}}
+                          <div class="market-cell">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-name="{{name}}" class="btn btn-default dropdown-toggle market-button" data-toggle="dropdown" aria-expanded="false">
+                                  <span class="name">{{name}}</span> <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                {{#each getSkills}}
+                                  <li><a href="#">{{this}}</a></li>
+                                {{/each}}
+                                </ul>
+                              </div>
+                            </div>
+                          {{/each}}
+                        </div>
+                        <div class="col-xs-9 col-sm-10 skills-sliders">
+                          {{#each filters 'skill'}}
+                            <div class="market-cell" style="padding-top: 5px; padding-left:15px">
+                              <div class="sct {{className}}"> </div>
+                                <span class="filter-val float-left"><span data-key="{{name}}" data-minmax="Min " class="min-value">Min {{name}}</span> <br><input data-key="{{name}}" class="min-{{className}} market-input-left"></span>
+                                <span class="filter-val float-right"><span data-key="{{name}}" data-minmax="Max " class="max-value">Max {{name}}</span> <br><input data-key="{{name}}" class="max-{{className}} market-input-right"></span>
+                            </div>
+                          {{/each}}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <div class="row">
+                        <div class="col-xs-3 col-md-offset-1 col-sm-2 col-md-2">
+                          {{#each filters 'nonskill'}}
+                            <div class="market-cell simple-filter" data-name="{{name}}" style="font-weight: normal; color:#333333">{{name}}</div>
+                          {{/each}}
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-9">
+                          {{#each filters 'nonskill'}}
+                            <div class="market-cell" style="padding-top: 5px; padding-left:15px">
+                              <div class="sct {{className}}"> </div>
+                              <span class="filter-val float-left"><span data-key="{{name}}" data-minmax="Min " class="min-value">Min {{name}}</span> <br><input data-key="{{name}}" class="min-{{className}} market-input-left"></span>
+                                <span class="filter-val float-right"><span data-key="{{name}}" data-minmax="Max " class="max-value">Max {{name}}</span> <br><input data-key="{{name}}" class="max-{{className}} market-input-right"></span>
+                            </div>
+                          {{/each}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-action">
+          <a href="#" class="market-search">Search </a>
+          <a href="/transfers-history">Transfers History & Monitoring </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

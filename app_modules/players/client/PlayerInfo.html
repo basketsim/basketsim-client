@@ -1,0 +1,57 @@
+<template name="PlayerInfo">
+  {{#if player}}
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-image-header {{headerImg}}">
+          <div class="card-title">
+              <div style="max-width: 208px;display: inline-flex;">{{{fullName player}}}</div>
+              <span id="test-vue"></span>
+              <!--{{>Bookmark player=player}}-->
+          </div>
+        </div>
+        {{#if ownPlayer}}
+        <div class="card-content half-side-padding black-text">
+          <div class="mini-players">
+            {{#each players}}
+              {{>MiniPlayer player=this}}
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    {{#if showPlayerSkills}}
+      {{>Player player=player}}
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="row">
+          {{#if isSenior}}
+            <div class="col-xs-12">
+              {{#if isOnSale}}
+                {{>PlayerBidBox player=player}}
+              {{else}}
+                {{>PlayerSellBox player=player}}
+              {{/if}}
+            </div>
+          {{/if}}
+        </div>
+
+      </div>
+
+    {{else}}
+      {{>ExternalPlayerInfo player=player}}
+    {{/if}}
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      {{>PlayerStatsCard player=player}}
+    </div>
+  </div>
+
+  {{/if}}
+</template>

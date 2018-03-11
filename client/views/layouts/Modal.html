@@ -1,0 +1,22 @@
+<template name="Modal">
+<!-- Modal -->
+<div class="modal fade commentary-modal" id="player-options" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="min-width:{{widthPrg}}; max-width:{{maxWidth}}">
+    <div class="modal-content">
+      <div class="modal-header commentary">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{modalName}}</h4>
+      </div>
+      <div class="modal-body commentary {{modalClass}}">
+        <div class="row">
+          {{> Template.dynamic template=modalContentName}}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</template>

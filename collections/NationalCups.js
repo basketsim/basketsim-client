@@ -1,0 +1,1 @@
+global.NationalCups = new Mongo.Collection('national-cups', {idGeneration: 'MONGO'});

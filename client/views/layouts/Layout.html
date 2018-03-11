@@ -1,0 +1,47 @@
+<template name="Layout">
+<header>
+ {{> Header }}
+</header>
+<div id="content">
+	<div class="container-fluid">
+	{{#if currentUser}}
+	<div class="row inRow">
+		<div class="col-xs-12 col-sm-9 col-md-8 col-lg-7 col-lg-offset-1">
+			{{>yield}}
+		</div>
+    <div class="hidden-xs col-sm-3 col-md-4 col-lg-3">
+      <div id="sidebar"></div>
+    </div>
+	</div>
+	{{else}}
+		{{>yield}}
+	{{/if}}
+	</div>
+</div>
+{{>UserNotification}}
+<footer class="footer red">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-6 col-lg-offset-1">
+			<p>
+				Copyright(c): <br>
+				Basketsim 2017. <br>
+				Beta Version <a href='//forum.basketsim.com/t/release-notes/888/15' target="_blank">Release Notes</a>
+			</p>
+		</div>
+		<div class="col-xs-6 col-lg-4" style="text-align: right">
+			<p>Season: {{season}}, week: {{week}}/14</p>
+		</div>
+	</div>
+</div>
+</footer>
+
+
+
+<!-- <header>Basketsim</header>
+<div id="content">
+	{{>yield}}
+	<div class="push"></div>
+</div>
+<footer></footer> -->
+</template>

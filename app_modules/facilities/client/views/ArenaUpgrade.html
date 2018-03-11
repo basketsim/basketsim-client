@@ -1,0 +1,104 @@
+<template name="ArenaUpgrade">
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="weight-800" style="padding-left:0px">Arena Upgrades</h4>
+      <p class="arena-action-info"><span style="color:#ffab40" class="ion-information-circled"></span> Increase just the <span style="font-weight: 400">total capacity</span> and seats will be added to different parts of the arena based on the optimal distribution for league games.</p>
+    </div>
+  </div>
+  <form style="font-size:13px">
+    <div class="row">
+      <div class="form-group col-xs-12">
+        <div class="row">
+          <label for="arena-total" class="col-xs-3 arena-label col-form-label">Total</label>
+          <div class="col-xs-9" style="width: 79%">
+            <input type="text" class="form-control arena-input" id="arena-total" value="{{getNewSeats 'total'}}" placeholder="Seats to add">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <label for="arena-courtside" class="col-xs-5 arena-label col-form-label">Court Side</label>
+          <div class="col-xs-7">
+            <input type="text" class="form-control arena-input arena-section" id="arena-court_side" value="{{getNewSeats 'court_side'}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <label for="arena-courtend" class="col-xs-5 arena-label col-form-label">Court End</label>
+          <div class="col-xs-7">
+            <input type="text" class="form-control arena-input arena-section" id="arena-court_end" value="{{getNewSeats 'court_end'}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <label for="arena-courtend" class="col-xs-5 arena-label col-form-label">Balcony</label>
+          <div class="col-xs-7">
+            <input type="text" class="form-control arena-input arena-section" id="arena-upper_level" value="{{getNewSeats 'upper_level'}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <label for="arena-courtend" class="col-xs-5 arena-label col-form-label">VIP Boxes</label>
+          <div class="col-xs-7">
+            <input type="text" class="form-control arena-input arena-section" id="arena-vip" value="{{getNewSeats 'vip'}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="row cost-summary blue white-text hid">
+    <div class="col-xs-7">
+      <h4 class="orange-text weight-800">Cost Summary</h4>
+      <table class="table table-super-condensed arena-cost-table">
+        <tbody>
+          <tr>
+            <td>{{getNewSeats 'court_side'}} court side</td>
+            <td>{{dotify (cost 'court_side')}}$</td>
+          </tr>
+          <tr>
+            <td>{{getNewSeats 'court_end'}} court end</td>
+            <td>{{dotify (cost 'court_end')}}$</td>
+          </tr>
+          <tr>
+            <td>{{getNewSeats 'upper_level'}} upper level</td>
+            <td>{{dotify (cost 'upper_level')}}$</td>
+          </tr>
+          <tr>
+            <td>{{getNewSeats 'vip'}} vip</td>
+            <td>{{dotify (cost 'vip')}}$</td>
+          </tr>
+          <tr>
+            <td>Build balcony</td>
+            <td>{{dotify (cost 'balcony')}}$</td>
+          </tr>
+          <tr>
+            <td>Construction fee</td>
+            <td>{{dotify (cost 'construction')}}$</td>
+          </tr>
+          <tr>
+            <td class="summary-total">Total seats</td>
+            <td class="summary-total">{{dotify (cost 'total')}}$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-xs-5">
+      <h4 class="orange-text weight-800">Build Options</h4>
+      <button id="normal-build" class="btn btn-default arena-build-btn">
+        <h5 style="font-size: 16px; margin-top:0px; margin-bottom: 0px">Build</h5>
+        <small>{{duration}} days. Cost: {{dotify (cost 'total')}}$</small>
+      </button>
+      <button id="fast-build" style="margin-top: 10px;" class="btn btn-default arena-build-btn">
+        <h5 style="font-size: 16px; margin-top:0px; margin-bottom: 0px">Build Faster</h5>
+        <small>{{halfDuration}} days. Cost: {{dotify (cost 'total_fast')}}$</small>
+      </button>
+    </div>
+  </div>
+</template>

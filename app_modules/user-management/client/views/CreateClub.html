@@ -1,0 +1,55 @@
+<template name="CreateClub">
+  <div class="row">
+    <div class="col-xs-12 user-waiting" style="display:none">
+      <div class="card white" >
+        <div class="card-image-header cheerleaders">
+          <div class="card-title"></div>
+        </div>
+        <div class="card-content black-text">
+          <h4 style="font-weight:400; margin-top:0px; margin-bottom:0px; text-align:center">Congratulations!!!</h4>
+          <h4 style="font-weight:400; margin-top:0px; text-align:center">Your club is being prepared! You will be redirected to it in a few moments</h4>
+          <div style="height: 60px;margin-top: 10px;position: relative;">{{> spinner}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="card white user-creation">
+        <div class="card-image-header cheerleaders profile">
+          <div class="card-title" style="padding-top:88px">Welcome to Basketsim!</div>
+          <div class="card-subtitle" style="font-size:13px; font-weight:400">
+              You are seconds away from starting your management career! <br>
+              Just tell us a few details about you and your future club
+          </div>
+        </div>
+        <div class="card-content black-text">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <form>
+                  <div class="form-group form-username" style="margin-bottom:10px; display:{{displayUsername}}">
+                    <label class="control-label username-label" for="create-username">{{usernameLabel}}</label>
+                    <input id="create-username" class="form-control create-username" style="width:100%" type="text" placeholder="Your name in the game" value="{{getUsername}}">
+                  </div>
+
+                  <div class="form-group form-teamname" style="margin-bottom:10px">
+                    <label class="control-label teamname-label" for="create-team-name">{{teamnameLabel}}</label>
+                    <input id="create-team-name" class="form-control create-team-name" style="width:100%" type="text" placeholder="Your team's name">
+                  </div>
+
+                <div class="form-group form-country" style="margin-bottom:10px">
+                  <label class="control-label country-label" for="create-team-name">{{countryLabel}}</label>
+                  <select name="" id="create-country" class="form-control">
+                    <option disabled selected value>Select your country</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-success create-team" style="width:150px; height:42px; font-size: 16px margin-top:5px">Create Your Team!
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

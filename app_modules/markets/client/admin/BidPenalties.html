@@ -1,0 +1,13 @@
+<template name="BidPenalties">
+  {{#if wasPenalised}}
+    <span>This bidder has been penalised</span>
+  {{else}}
+    <button title="Warn Team" id="send-warning" type="button" class="btn transfer-actions btn-link ion-alert"></button>
+    <button title="Ban from transfers" id="ban-team" type="button" class="btn transfer-actions btn-link ion-ios-stopwatch"></button>
+    <button title="Lock account. Will be deleted automatically after a while" id="lock-team" type="button" class="btn transfer-actions btn-link ion-ios-locked"></button>
+    <div class="penalty-details no-display">
+      <textarea class="form-control" id="penalty-reason" maxlength="2048" style="height: 120px;" placeholder={{penaltyInfo.text}}></textarea>
+      <button type="submit" id="submit-penalty" class="btn btn-default market-mon-btn" style="margin-top: 5px">{{penaltyInfo.actionText}}</button>
+    </div>
+  {{/if}}
+</template>

@@ -1,0 +1,22 @@
+<template name="Achievements">
+  {{#if hasAchievements}}
+  <div class="card white achievement" style="max-width: 100%">
+    <div class="card-header tactics blue" style="margin-bottom: 6px">
+      <div class="card-title tactics">
+        Achievements
+      </div>
+    </div>
+    <div class="card-content" style="padding: 0; background: #F4F4F4">
+      {{#each achievements}}
+        <div style="background:{{compiled.color}}" class="trophy-tile">
+          <img src="{{compiled.imgPath}}" alt="{{compiled.title}} {{compiled.subtitle}}" style="width: 85px; margin-left:6px; margin-top: -5px;">
+          <div style="font-size: 11px; font-weight: 400; text-align: center; color:white; line-height: 1.2;">
+            {{compiled.subtitle}} <br>
+            {{compiled.title}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+</template>

@@ -1,0 +1,109 @@
+<template name="Training">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-image-header training">
+          <div class="card-title">Training</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="card white">
+          <div class="card-header tactics blue">
+            <div class="header-text white-text">
+                <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Guards</div>
+            </div>
+          </div>
+          <div class="card-content" style="padding: 10px 8px 10px 8px;">
+              <p>Players who are coordinating the offense. Expect them to dribble, pass and shoot a lot. They are shorter and not the best at rebounding, but their defense is vital in blocking opponet's guards and their quickness can often surprise their opponents. </p>
+              <p class="blue-text">Main skills are: handling, passing, defense, quickness, dribbling</p>
+          </div>
+          <div class="card-action" style="padding: 10px 8px 10px 8px;">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="name" data-selected="" data-name="{{name}}">Focus: {{currentFocus "guards"}}</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+              {{#each getSkills}}
+                <li><a href="#" data-item="{{this}}" data-group="guards" data-category="Focus">Focus: {{this}}</a></li>
+              {{/each}}
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="name" data-selected="" data-name="{{name}}">Intensity: {{currentIntensity "guards"}}</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+              {{#each getIntensities}}
+                <li><a href="#" data-item="{{this}}" data-group="guards" data-category="Intensity">Intensity: {{this}}</a></li>
+              {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="card white">
+          <div class="card-header tactics blue">
+            <div class="header-text white-text">
+                <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Big Men</div>
+            </div>
+          </div>
+          <div class="card-content" style="padding: 10px 8px 10px 8px;">
+              <p>They are tall and for sure they know how to jump. They are mostly concerned with blocking shots and using their big bodies for defense and rebounds. With their positioning, they get close to the hoop and take easier shots than the guards</p>
+              <p class="blue-text">Main skills are: positioning, rebounds, defense, quickness</p>
+          </div>
+          <div class="card-action" style="padding: 10px 8px 10px 8px;">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="name" data-selected="" >Focus: {{currentFocus "bigMen"}}</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+              {{#each getSkills}}
+                <li><a href="#" data-item="{{this}}" data-group="bigMen" data-category="Focus">Focus: {{this}}</a></li>
+              {{/each}}
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="name" data-selected="" data-group="bigMen">Intensity: {{currentIntensity "bigMen"}}</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+              {{#each getIntensities}}
+                <li><a href="#" data-item="{{this}}" data-group="bigMen" data-category="Intensity">Intensity: {{this}}</a></li>
+              {{/each}}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="card white">
+          {{>Coach coach=coach}}
+          <div class="card-action" style="padding:10px">
+            <a href="/coach-market">Visit Coach Market</a>
+            {{#if coach}}
+            <a href="#" class="renew-contract">Renew Contract</a>
+            <a href="#" class="fire-coach">Fire Your Coach</a>
+            {{/if}}
+        <!--             <a>Set physical training</a>
+            <a>Training report</a>
+            <a>Exact player skills</a>
+            <a>Check growth stats</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add one more row called training preview - where you show how much players will train -->
+</template>

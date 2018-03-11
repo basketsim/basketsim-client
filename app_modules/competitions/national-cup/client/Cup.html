@@ -1,0 +1,52 @@
+<template name="Cup">
+  <div class="row" style="margin-top: -20px; margin-bottom: 10px!important">
+    <div class="col-xs-4">
+    <a href="{{leaguePath}}" style="color:inherit;">
+      <button type="button" class="btn btn-default btn-nav">
+      <span class="glyphicon glyphicon-star" aria-hidden="true"> </span>
+        {{{leagueName}}}
+      </button>
+    </a>
+    </div>
+    <div class="col-xs-4">
+      <a href="{{cupPath}}" style="color:inherit;">
+        <button type="button" class="btn btn-default btn-nav active">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          {{{country}}} Cup
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div class="card white">
+    <div class="card-header tactics red">
+      <div class="card-title tactics">{{{country}}} National Cup</div>
+    </div>
+    <div class="card-content half-padding black-text" style="max-height:400px; overflow:auto">
+      <div class="row">
+        <div class="col-xs-12">
+          {{#if cup}}
+            <!-- toggle between a loader and matches based on availability of matches -->
+            {{#if loading}}
+              <div style="display:block">{{>Spinner}}</div>
+              <div style="display:none">{{>LeagueMatches matches=getMatches md=6}}</div>
+            {{else}}
+              <div style="display:none">{{>Spinner}}</div>
+              <div style="display:block">{{>LeagueMatches matches=getMatches md=6}}</div>
+            {{/if}}
+          {{else}}
+            This cup season has not started yet
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    {{#if cup}}
+      <div class="card-action">
+        {{#each rounds}}
+        <a href="./../{{this.round}}/{{selectedSeason}}" class="round" data-round='{{this.round}}'> {{this.name}}</a>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+
+</template>

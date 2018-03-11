@@ -1,0 +1,32 @@
+<template name="AdminTransferActions">
+  <div class="row">
+    {{#if isActive}}
+      {{#if isTransferStopped}}
+        <span>Transfer was stopped</span>
+      {{else}}
+        <div class="col-xs-9"><button id="stop-transfer" type="button" class="btn btn-link">Stop Transfer (only working on active transfers)</button></div>
+      {{/if}}
+    {{else}}
+      <div class="col-xs-3 shrink">
+      {{#if isOriginalPrice}}
+        <select id="adjust-price" class="blue-select">
+          <option selected>Adjust Price</option>
+          <option value="0.8">Adjust by 20% to {{percentage 0.8 transferObj.price.end}}</option>
+          <option value="0.7">Adjust by 30% to {{percentage 0.7 transferObj.price.end}}</option>
+          <option value="0.6">Adjust by 40% to {{percentage 0.6 transferObj.price.end}}</option>
+          <option value="0.5">Adjust by 50% to {{percentage 0.5 transferObj.price.end}}</option>
+          <option value="0.4">Adjust by 60% to {{percentage 0.4 transferObj.price.end}}</option>
+          <option value="0.3">Adjust by 70% to {{percentage 0.3 transferObj.price.end}}</option>
+        </select>
+      {{else}}
+        <span>Price was adjusted</span>
+      {{/if}}
+      </div>
+      {{#if isTransferCancelled}}
+        <span>Transfer was reverted</span>
+      {{else}}
+        <div class="col-xs-9"><button id="cancel-transfer" type="button" class="btn btn-link">Cancel Transfer (money are taken from seller, but not returned to buying team)</button></div>
+      {{/if}}
+    {{/if}}
+  </div>
+</template>

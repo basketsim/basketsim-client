@@ -1,0 +1,33 @@
+<template name="Match">
+<h3>Simulate Match </h3>
+<h5>Home Team: {{#with argTest 'All Stars Ploiesti'}} {{name}}, {{_id}} {{/with}}
+</h5>
+
+<strong>
+Players:
+<ul>
+{{#each players 'All Stars Ploiesti'}}
+<li> {{name}}: {{_id}} </li>
+{{/each}}
+</ul>
+</strong>
+
+<h5>Away Team: {{#with argTest 'Bot'}} {{name}}, {{_id}} {{/with}}
+</h5>
+
+<strong>
+Players:
+<ul>
+{{#each players 'Bot'}}
+<li> {{name}}: {{_id}} </li>
+{{/each}}
+</ul>
+</strong>
+
+<br><br>
+List of available matches:
+{{#each match}}
+	<li>{{date}} {{_id}}</li>
+{{/each}}
+
+</template>

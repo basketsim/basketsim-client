@@ -1,0 +1,18 @@
+<template name="MatchPreview">
+  <div class="card white">
+    <div class="card-image-header team-matches">
+      <div class="card-title with-sub">Match Preview</div>
+      <div class="card-subtitle"><a class="discrete dwhite" href="/teams/{{match.homeTeam.id._str}}">{{{match.homeTeam.name}}}</a> -
+      <a class="discrete dwhite" href="/teams/{{match.awayTeam.id._str}}">{{{match.awayTeam.name}}}</a></div>
+    </div>
+
+    <div class="card-content half-padding short black-text">
+      <h4 style="padding-left: 10px;font-size: 18px;font-weight: 400;margin-bottom: 25px;margin-top: 15px;">
+        Match is scheduled to start {{getTime match.dateTime.timestamp}}
+      </h4>
+    </div>
+    <div class="card-action" style="padding: 10px 8px 10px 8px;">
+      <a href="#" title="Add match to live" class="add-to-live" style="font-weight: 600;padding-left: 10px;">ADD TO LIVE</a>
+    </div>
+  </div>
+</template>

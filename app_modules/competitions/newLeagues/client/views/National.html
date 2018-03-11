@@ -1,0 +1,89 @@
+<template name="National">
+  <div class="row" style="margin-top: -20px; margin-bottom: 10px!important">
+    <div class="col-xs-6 col-sm-4">
+    <a href="{{leaguePath}}" style="color:inherit;"> <!-- if you do this, the navigator won't work well.  -->
+      <button type="button" class="btn btn-default btn-nav active">
+      <span class="glyphicon glyphicon-star" aria-hidden="true"> </span>
+        {{getLeagueName}} <!-- if you do this, the navigator won't work well.  -->
+      </button>
+    </a>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+      <a href="{{cupPath}}" style="color:inherit;"> <!-- if you do this, the navigator won't work well.  -->
+        <button type="button" class="btn btn-default btn-nav">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          {{getCupName}} <!-- if you do this, the navigator won't work well.  -->
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <div class="stats">
+          <!-- {{>LeagueStats}} -->
+        </div>
+        <div class="card white league-standings">
+          <div class="card-content black-text" style="padding:0 0 5px 0">
+            <table class="table table-condensed league table-striped table-hover">
+              <thead class="blue" style="color:#f4f4f4">
+                <tr>
+                  <th class="league-table-header-cell" style="padding-left:10px">#</th>
+                  <th class="league-table-header-cell" colspan="2" style="padding-left:26px">Team</th>
+                  <th class="league-table-header-cell">W-L</th>
+                  <th class="league-table-header-cell">+</th>
+                  <th class="league-table-header-cell">-</th>
+                  <th class="league-table-header-cell">+/-</th>
+                  <th class="league-table-header-cell hidden-xs">Manager</th>
+                </tr>
+              </thead>
+              <tbody>
+                 {{#each getTeams}}
+                  <tr>
+                    <td class="league-table-body-cell" style="padding-left: 10px!important;width: 10px;">{{position}}. </td>
+                    <td class="league-table-body-cell" style="text-align:right;width: 45px;"><img src="/resources/shirts/{{shirt}}.gif" alt="shirt" class="smallShirt"></td>
+                    <td class="league-table-body-cell">
+                      <div class="team-name"> <a href="/teams/{{team_id._str}}">{{{name}}}</a></div>
+                    </td>
+                    <td class="league-table-body-cell">{{win}}-{{lose}}</td>
+                    <td class="league-table-body-cell">{{scored}} </td>
+                    <td class="league-table-body-cell">{{against}} </td>
+                    <td class="league-table-body-cell">{{pointsDifference}} </td>
+                    <td class="league-table-body-cell hidden-xs">{{managerName}} </td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+          <div style="padding:10px" class="card-action">
+            <a style="padding-bottom:8px" class="show-league-stats" href="#">Statistics</a>
+            {{>LeagueNavigator league=getLeagueReactive displayedSeason=displayedSeason}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="card">
+          <div class="card-image-header last-games">
+            <div class="card-title">Last Games</div>
+          </div>
+          <div class="card-content" style="padding-top:5px">
+          {{>LeagueMatches matches=previousMatches}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="card">
+          <div class="card-image-header next-matches">
+            <div class="card-title">Next Matches</div>
+          </div>
+          <div class="card-content" style="padding-top:5px">
+          {{>LeagueMatches matches=nextMatches}}
+          </div>
+        </div>
+      </div>
+    </div>
+</template>

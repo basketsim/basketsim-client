@@ -1,0 +1,93 @@
+<template name="MatchSummary">
+  <div class="card white">
+    <div class="card-image-header team-matches">
+      <div class="card-title with-sub">Match Stats</div>
+      <div class="card-subtitle"><a class="discrete dwhite" href="/teams/{{match.homeTeam.id._str}}">{{{match.homeTeam.name}}}</a> -
+      <a class="discrete dwhite" href="/teams/{{match.awayTeam.id._str}}">{{{match.awayTeam.name}}}</a></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-7 col-lg-8">
+      <div class="card white">
+        <div class="card-content half-padding short black-text">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12">
+              <div class="row">
+                  <div class="col-xs-12">
+                    {{>Scoreboard match=match}}
+                  </div>
+                  <div class="col-xs-12">
+                    {{>TeamSummary match=match}}
+                  </div>
+                  <div class="col-xs-12" style="margin-top:10px">
+                    {{#with match}}
+                      <div class="table-responsive">
+                        <table class="table table-condensed table-striped league player-summary {{whichTeam}}">
+                          <thead class="redHead blue">
+                            <tr>
+                              <th>Court side</th>
+                              <th>Court end</th>
+                              <th>Upper Level</th>
+                              <th>VIP</th>
+                              <th>Total</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>{{attendance.courtSide}}</td>
+                              <td>{{attendance.courtEnd}}</td>
+                              <td>{{attendance.upperLevel}}</td>
+                              <td>{{attendance.vip}}</td>
+                              <td>{{attendance.total}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    {{/with}}
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-5 col-lg-4">
+    {{#with match}}
+      {{>TeamTactics team=homeTeam which='homeTeam' match=this}}
+      {{>TeamTactics team=awayTeam which='awayTeam' match=this}}
+    {{/with}}
+    </div>
+  </div>
+
+  <!-- <div class="card white"> -->
+    <!-- <div class="card-content half-side-padding black-text"> -->
+      <div class="row">
+        <div class="col-xs-12">
+          {{>PlayerSummary whichTeam="homeTeam" match=match}}
+        </div>
+        <div class="col-xs-12">
+          {{>PlayerSummary whichTeam="awayTeam" match=match}}
+        </div>
+      </div>
+    <!-- </div> -->
+  <!-- </div> -->
+
+<!--       <div class="row">
+          <div class="col-xs-12 col-lg-6">
+            {{#each playerRatings "homeTeam" true}}
+              {{>PlayerSummary}}
+            {{/each}}
+          </div>
+
+          <div class="col-xs-12 col-lg-6">
+            {{#each playerRatings "awayTeam"}}
+              {{>PlayerSummary}}
+            {{/each}}
+          </div>
+      </div> -->
+<!--     </div>
+
+  </div> -->
+</template>

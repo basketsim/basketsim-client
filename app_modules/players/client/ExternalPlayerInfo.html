@@ -1,0 +1,52 @@
+<template name="ExternalPlayerInfo">
+  <div class="col-xs-12 col-sm-6">
+    <div class="card white">
+<!--       <div class="card-header tactics red">
+        <div class="header-text white-text">
+          <div class="card-title tactics" style="padding-bottom:10px">{{{name}}} {{{surname}}}</div>
+          <div class="col-subtitle">
+              {{this.age}} years old from {{this.country}}. {{this.height}} cm, {{this.weight}} kg.
+              This player is {{this.character}}. He plays for <a href="/teams/{{team_id._str}}" style="color:#ffab40!important">{{getTeamName}}</a> and earns {{this.wage}} € / week.
+              {{#if isSenior}}
+                EV: {{dotify ev}} $
+              {{/if}}
+          </div>
+        </div>
+      </div> -->
+
+      <div class="card-header tactics blue" style="height:120px; padding:0">
+        <div class="header-image">
+          <img class="player-face" src="//faces.basketsim.com?id={{player._id._str}}" alt="">
+        </div>
+        <div class="header-text white-text">
+          <div class="card-title tactics" style="padding-bottom:10px">
+            {{#if isSenior}}
+              <a href="/players/{{this._id._str}}">{{{player.name}}} {{{player.surname}}}</a>
+            {{else}}
+              <a href="/youth/{{this._id._str}}">{{{player.name}}} {{{player.surname}}}</a>
+            {{/if}}
+          </div>
+          <div class="card-subtitle" style="font-size: 12px; margin:0px">
+            {{player.age}} y/o, {{player.height}} cm, {{player.getWeight}} kg, {{player.character}}, {{player.country}}<br>
+            Plays for <a href="/teams/{{player.team_id._str}}" style="color:#ffab40!important">{{getTeamName}}</a>.
+            <a style="color:#ffab40!important" href="/transfers-history?player={{player._id._str}}">Transfer History</a><br>
+            Salary: {{dotify player.wage}} $/ week.
+            <br>
+            {{#if isSenior}}
+              EV: {{dotify player.ev}} $
+            {{/if}}
+            {{player.talent}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-6">
+    {{#if isOnSale}}
+      {{>PlayerBidBox player=player}}
+    {{/if}}
+
+  </div>
+
+</template>

@@ -1,0 +1,11 @@
+<template name="EmptyModal">
+<div class="modal fade commentary-modal" id="empty-modal" tabindex="-1" role="dialog" aria-labelledby="empty-label">
+  <div class="modal-dialog" style="min-width:{{widthPrg}}; max-width:{{maxWidth}}">
+    <div class="modal-content">
+      <div class="row">
+        {{> Template.dynamic template=modalContentName}}
+      </div>
+    </div>
+  </div>
+</div>
+</template>

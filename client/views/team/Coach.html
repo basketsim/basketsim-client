@@ -1,0 +1,74 @@
+<template name="Coach">
+  <div class="card-header tactics blue">
+    <div class="header-text white-text">
+      {{#if coach}}
+        <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">{{{coach.name}}} {{{coach.surname}}} - Coach</div>
+      {{else}}
+        <div class="card-title tactics" style="padding-bottom: 5px; padding-top: 5px;">Your team does not have a coach</div>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="card-content" style="font-size:12px; padding: 10px 8px 10px 8px;">
+    {{#with coach}}
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <table class="table table-condensed trainer">
+              <tbody>
+                <tr>
+                  <td class="skill">Senior Ability:</td>
+                  <td>{{seniorAbility}}/100</td>
+                </tr>
+                <tr>
+                  <td class="skill">Youth Ability:</td>
+                  <td>{{youthAbility}}/100</td>
+                </tr>
+                <tr>
+                  <td class="skill">Experience:</td>
+                  <td>{{getSkillString "experience"}} ({{getSkillInt "experience"}})</td>
+                </tr>
+                <tr>
+                  <td class="skill">Motivation:</td>
+                  <td>{{getMotivation}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+
+          <div class="col-xs-12 col-sm-6">
+            <table class="table table-condensed trainer">
+              <tbody>
+                <tr>
+                  <td class="skill">Wage:</td>
+                  <td>{{wage}}</td>
+                </tr>
+                <tr>
+                  <td class="skill">Age:</td>
+                  <td>{{age}}</td>
+                </tr>
+                <tr>
+                  <td class="skill">Character:</td>
+                  <td>{{character}}</td>
+                </tr>
+                <tr>
+                  <td class="skill">Country:</td>
+                  <td>{{country}}</td>
+                </tr>
+<!--                 <tr>
+                  <td class="skill">Youth WR:</td>
+                  <td>{{wwy}}</td>
+                </tr> -->
+
+<!--                 <tr>
+                  <td class="skill">Workrate:</td>
+                  <td>{{getSkillString "workrate"}} ({{getSkillInt "workrate"}})</td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+    {{/with}}
+  </div>
+</template>

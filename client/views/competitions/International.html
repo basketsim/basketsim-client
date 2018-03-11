@@ -1,0 +1,60 @@
+<template name="International">
+<!--   <div class="row visible-xs">
+    <div class="col-xs-12">
+      <div class="card" style="background-color:#060058">
+        <div class="card-content">
+          <img src="./material/web-size/phoenix.png" alt="Pheonix Trophy" style="width:25%; margin-left:50%">
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card" style="background-color:#0F0690">
+        <div class="card-content">
+          <div class="row">
+            <div class="col-xs-5 col-sm-5 col-lg-4">
+              <img src="./material/web-size/phoenix.png" alt="Pheonix Trophy" style="width:100%">
+            </div>
+            <div class="phoenix-info col-xs-7 col-sm-7 col-lg-8">
+              <table class="table table-condensed league">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <!-- <th></th> -->
+                    <th>Team</th>
+                    <th>W-L</th>
+                    <th class="hidden-xs">+</th>
+                    <th class="hidden-xs">-</th>
+                    <th class="hidden-xs">+/-</th>
+                    <!-- <th class="hidden-xs">Manager</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                   {{#each getTeams}}
+                    <tr>
+                      <td>{{place}}. </td>
+                      <!-- <td style="text-align:right"><img src="img/shirts/{{shirt}}.gif" alt="shirt" class="smallShirt"></td> -->
+                      <td>
+                        <div class="team-name"><a href="/club/{{userinfoId this}}" style="color:white">{{{name}}}</a> </div>
+                        <!-- <div class="team-name">{{{name}}} </div> -->
+                      </td>
+                      <td>{{wins}}-{{losses}}</td>
+                      <td class="hidden-xs">{{scoredPoints}} </td>
+                      <td class="hidden-xs">{{againstPoints}} </td>
+                      <td class="hidden-xs">{{scoreDiff this}} </td>
+                      <!-- <td class="hidden-xs">{{user.username}} </td> -->
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{>PheonixPlayoff}}
+    </div>
+  </div>
+</template>

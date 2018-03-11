@@ -1,0 +1,35 @@
+<template name="Live">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-image-header team-matches">
+          <div class="card-title">Live</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+  {{#each reactiveLive}}
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-header blue">
+          <div class="card-title">{{teamNames}}</div>
+        </div>
+        <div class="card-content black-text live-text" style="max-height:400px; overflow:auto; font-size:15px">
+          {{#each matchEvents 8}}
+            <p>{{{this}}}</p>
+          {{/each}}
+        </div>
+        <div class="card-action">
+          <a href="#" class="remove-live">Remove from Live</a>
+          <a href="#" class="full-commentary">Full Commentary</a>
+        </div>
+      </div>
+    </div>
+
+    {{> FullCommentary match=this matchEvents=matchEvents teamNames=teamNames}}
+  {{/each}}
+  </div>
+
+</template>

@@ -1,0 +1,30 @@
+<template name="Scoreboard">
+  <div class="scoreboard">
+    <div class="homeTeamBrd">
+      <div class="row">
+        <div class="col-xs-12 col-lg-3">
+          <img src="{{match.homeTeam.logo}}">
+        </div>
+        <div class="col-xs-12 col-lg-9">
+          <h4>{{{match.homeTeam.name}}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="score">
+    <h3>{{score.homeTeam}}:{{score.awayTeam}}</h3>
+    {{#if commentaryActive}}
+    <p><a href="#">View Full Match</a></p>
+    {{/if}}
+    </div>
+    <div class="awayTeamBrd">
+      <div class="row">
+        <div class="col-xs-12 col-lg-3 col-lg-push-8">
+          <img src="{{match.awayTeam.logo}}">
+        </div>
+        <div class="col-xs-12 col-lg-9 col-lg-pull-3">
+          <h4>{{{match.awayTeam.name}}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

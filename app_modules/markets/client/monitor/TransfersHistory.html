@@ -1,0 +1,74 @@
+<template name="TransfersHistory">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-image-header market">
+          <div class="card-title">Transfers History</div>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <div class="">
+          <div class="card-content white-text" style="padding-bottom: 10px; padding-left: 15px; padding-right: 15px;">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-5 market-mon-col">
+                <form class="form-inline">
+                  <div class="form-group market-mon-form">
+                    <label class="market-mon-label" for="price-min">Price:</label>
+                    <input type="text" class="form-control market-mon-input" id="price-min" placeholder="Min">
+                  </div>
+                  <div class="form-group market-mon-form">
+                    <input type="text" class="form-control market-mon-input" id="price-max" placeholder="Max">
+                  </div>
+                </form>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-3 market-mon-col">
+              <form class="form-inline">
+                <div class="form-group market-mon-form">
+                  <label class="market-mon-label" for="date-select">Date:</label>
+                    <select name="date-select" style="background-color: #38435e; height: 30px; max-width: 102px;" id="date-select">
+                      <option value="anytime">Anytime</option>
+                      <option value="today">Last 24 Hours</option>
+                      <option value="lastThreeDays">Last 3 Days</option>
+                      <option value="lastWeek">Last Week</option>
+                      <option value="lastTwoWeeks">Last 2 Weeks</option>
+                      <option value="lastMonth">Last Month</option>
+                      <option value="lastThreeMonths">Last 3 Months</option>
+                      <option value="lastYear">Last Year</option>
+                    </select>
+                </div>
+              </form>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <button id="market-filter" type="submit" class="btn btn-default market-mon-btn">Filter</button>
+                <!--<form action="/transfers-history" class="btn-form">-->
+                  <!--<button type="submit" class="btn btn-default market-mon-btn" value="Reset">Reset</button>-->
+                <!--</form>-->
+                <a href="/transfers-history" class="btn btn-default market-mon-btn" style="color: #ffa30f!important">Reset</a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12" style="font-weight: 400">
+                <span> {{dotify transfersCount}} of {{dotify transfersLimit}} transfers loaded. </span>
+                <button id="market-more" type="submit" class="btn btn-default market-mon-btn borderless-btn">Load More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-content" style="color:white; padding-left: 7px; padding-right: 7px; padding-top: 0px;">
+          <div id="table-container" class="row">
+            <table id="table" class="blue-table"></table>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card blue">
+
+      </div>
+
+    </div>
+  </div>
+</template>

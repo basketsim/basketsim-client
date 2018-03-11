@@ -1,0 +1,112 @@
+/* Media queries */
+@media (min-width: 768px) {
+    .live-text {
+        padding-left: 0px!important;
+    }
+    .search-bar {
+        top:55px;
+    }
+}
+@media (max-width: 768px) {
+    .search-bar {
+        top: 18px;
+    }
+}
+
+/* BookmarkList */
+.bookmark-list .card-header {
+    background: #ffffff;
+    /*height: 120px;*/
+    padding: 12px;
+    border-bottom: 1px;
+    border-bottom-color: #f4f4f4;
+    border-bottom-style: solid;
+}
+.bookmark-list .btn-link {
+    padding: 0px 5px;
+}
+.bookmark-list .player-name {
+    display: inline-block;
+}
+.bookmark-list a {
+    color: #565656!important;
+    font-weight: 600;
+    padding: 0px 5px;
+}
+.bookmark-list .card-content {
+    padding: 12px;
+}
+.bookmark-list h4 {
+    color: white;
+    margin: 0px 0px 2px 6px;
+}
+
+.cmt p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px 0px 8px;
+}
+
+.table-card > tbody > tr > td:first-child,
+.table-card > tbody > tr > th:first-child {
+    padding-left: 12px!important;
+}
+.table-card > tbody > tr > th:not(:first-child) {
+    padding-left: 0px!important;
+}
+.bigger {
+    font-size: 15px;
+    font-weigh: 400;
+}
+.commentaries-min {
+    height: 390px;
+    overflow: auto;
+}
+.custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 3px;
+    padding: 0 5px;
+    text-overflow: '';
+}
+.ion-load-a {
+    display: inline-block;
+    -webkit-animation-timing-function: steps(8, start);
+    -moz-animation-timing-function: steps(8, start);
+    animation-timing-function: steps(8, start);
+    -webkit-animation: spin 1s infinite linear;
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+}
+@keyframes spin { 0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); } }
+/*Pair it with a weight and max-weight to work*/
+.adjustable-weight {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#search-popup {
+    width: inherit;
+    background-color: white;
+    position: absolute;
+    z-index: 1000;
+    color: #555555;
+    box-shadow: 0px 1px 1px #a9a9a9;
+}
+#results-list {
+    width: inherit;
+}
+#show-more {
+    padding: 4px;
+}
+.search-bar {
+    /*position: absolute;*/
+    margin-bottom: 10px;
+    width: 210px;
+    position:absolute;
+    right: 10px
+}

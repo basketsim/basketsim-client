@@ -1,0 +1,17 @@
+<template name="TransferFlag">
+  <div class="col-xs-12" style="padding-top: 5px">
+    {{#if flaggedByThisUser}}
+      <span>You {{otherFlags}} have flagged this transfer</span>
+    {{else}}
+      <button id="flag-transfer" type="button" class="btn btn-link">Report Transfer <span style="font-size: 12px;">({{flagsCount}})</span></button>
+    {{/if}}
+  </div>
+  <div id="comment-col" class="col-xs-12 no-display">
+    <form id="submit-comment">
+      <div style="margin-top: 10px" class="form-group">
+        <textarea class="form-control" id="flag-reason" maxlength="2048" placeholder="Please write a few words on why you consider this transfer is breaking the rules. This will help our moderation team. Thanks!"></textarea>
+        <button type="submit" class="btn btn-default market-mon-btn" style="margin-top: 5px">Submit Comment</button>
+      </div>
+    </form>
+  </div>
+</template>

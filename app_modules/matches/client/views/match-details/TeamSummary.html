@@ -1,0 +1,99 @@
+<template name="TeamSummary">
+  {{#with stats}}
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.twoPoints}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.twoPoints.converted}}/{{homeStats.twoPoints.total}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.twoPoints}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.twoPoints.converted}}/{{awayStats.twoPoints.total}}</p></div>
+    <div class="statName">2P</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.twoPointsPercentage}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.twoPoints.percentage}}%</p></div>
+    <div class="awayStat" style="width:{{awayRatio.twoPointsPercentage}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.twoPoints.percentage}}%</p></div>
+    <div class="statName">2P%</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.threePoints}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.threePoints.converted}}/{{homeStats.threePoints.total}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.threePoints}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.threePoints.converted}}/{{awayStats.threePoints.total}}</p></div>
+    <div class="statName">3P</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.threePointsPercentage}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.threePoints.percentage}}%</p></div>
+    <div class="awayStat" style="width:{{awayRatio.threePointsPercentage}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.threePoints.percentage}}%</p></div>
+    <div class="statName">3P%</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.freeThrows}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.freeThrows.converted}}/{{homeStats.freeThrows.total}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.freeThrows}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.freeThrows.converted}}/{{awayStats.freeThrows.total}}</p></div>
+    <div class="statName">FT</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.freeThrowsPercentage}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.freeThrows.percentage}}%</p></div>
+    <div class="awayStat" style="width:{{awayRatio.freeThrowsPercentage}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.freeThrows.percentage}}%</p></div>
+    <div class="statName">FT%</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.rebounds}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.rebounds.defensive}} + {{homeStats.rebounds.offensive}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.rebounds}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.rebounds.defensive}} + {{awayStats.rebounds.offensive}}</p></div>
+    <div class="statName">REB</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.assists}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.assists}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.assists}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.assists}}</p></div>
+    <div class="statName">AS</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.fouls}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.fouls}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.fouls}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.fouls}}</p></div>
+    <div class="statName">FO</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.steals}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.steals}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.steals}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.steals}}</p></div>
+    <div class="statName">ST</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.turnovers}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.turnovers}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.turnovers}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.turnovers}}</p></div>
+    <div class="statName">TO</div>
+  </div>
+
+  <div class="pcgCont">
+    <div class="homeStat" style="width:{{homeRatio.blocks}}%"> </div>
+    <div class="homeStatVal"><p>{{homeStats.blocks}}</p></div>
+    <div class="awayStat" style="width:{{awayRatio.blocks}}%"></div>
+    <div class="awayStatVal"><p>{{awayStats.blocks}}</p></div>
+    <div class="statName">BL</div>
+  </div>
+  {{/with}}
+</template>

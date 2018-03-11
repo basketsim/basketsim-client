@@ -1,0 +1,45 @@
+<template name="TeamTactics">
+  <div class="card white">
+    <div class="card-header tactics blue">
+      <div class="card-title tactics">{{{team.name}}}</div>
+    </div>
+    <div class="card-content half-padding black-text">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="table-responsive" style="border:none">
+            <table style="width:100%; border:none" class="table table-condensed tactics">
+                <th span=2>
+                  Tactics
+                </th>
+                {{#with matchTeam}}
+                <tr>
+                  <td>Defensive</td>
+                  <td>{{this.defensive}}</td>
+                </tr>
+                <tr>
+                  <td>Offensive</td>
+                  <td>{{this.offensive}}</td>
+                </tr>
+                {{/with}}
+                <th span=2 style="padding-top:10px">
+                  Ability
+                </th>
+                <tr>
+                  <td>Defense</td>
+                  <td>{{ratings 'defense'}}</td>
+                </tr>
+                <tr>
+                  <td>Rebounds</td>
+                  <td>{{ratings 'rebounds'}}</td>
+                </tr>
+                <tr>
+                  <td>Experience</td>
+                  <td>{{ratings 'experience'}}</td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

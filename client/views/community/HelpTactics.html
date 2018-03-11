@@ -1,0 +1,152 @@
+<template name="HelpTactics">
+{{>HelpMenu}}
+<div class="card white">
+  <div class="card-header red white-text">
+    <div class="card-title white-text">Tactics</div>
+  </div>
+  <div class="card-content no-pad-top white black-text">
+    In Basketsim, tactics play a very important role. You will often find yourself playing against opponents of similar skill level, so carefully studying your upcoming match and choosing the proper tactic could give you the edge you need for winning the game.
+    Except “normal” all tactics give some benefits to certain aspects of the game, but also some other aspects might suffer a bit. There are no better tactics than others - it all depends on your, and your opponent team’s strengths and weaknesses and how the tactic will enhance these.
+    Each tactic can influence either your abilities or your opponent abilities. Here’s the table of tactics and their influence.
+    <br><br>
+
+    <table class="table table-condensed table-striped">
+      <tbody>
+        <tr>
+          <th>Tactic</th>
+          <td>Low</td>
+          <td>Moderate</td>
+          <td>High</td>
+          <td>Very High</td>
+        </tr>
+        <tr>
+          <th>SBOD</th>
+          <td></td>
+          <td>- Off Rebounds <br>+ Def. Positioning <br>+ Def. Quickness </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>CES</th>
+          <td></td>
+          <td>+ Fouling</td>
+          <td></td>
+          <td>+ Stop Possession</td>
+        </tr>
+        <tr>
+          <th>BOAR</th>
+          <td>- Off. Positioning <br> - Off. Quickness</td>
+          <td>+ Def. Quickness</td>
+          <td></td>
+          <td>+ Def. Rebounds</td>
+        </tr>
+        <tr>
+          <th>PPZ</th>
+          <td>+ Opp. Assisted 3P <br>+ Opp. Individual 3P</td>
+          <td></td>
+          <td>- Opp. Assisted 2P<br>- Opp. Individual 2P</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>WOO</th>
+          <td></td>
+          <td>+ Stop Possession <br> + Opp. Assisted 2P <br>+ Opp. Assisted 3P <br>- Opp. Individual 2P <br>- Opp. Individual 3P</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>HCT</th>
+          <td></td>
+          <td>- Def. Rebounds <br> - Opp. Assisted 2P <br>- Opp. Assisted 3P</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Offensive</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>RTD</th>
+          <td></td>
+          <td>- Off. Quickness</td>
+          <td>+ Possession <br> + #Assisted Actions</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>FEB</th>
+          <td>- Assisted 2P <br>- Assisted 3P</td>
+          <td>- Def. Rebounds</td>
+          <td></td>
+          <td>+ Off. Quickness <br>+ Off. Positioning</td>
+        </tr>
+        <tr>
+          <th>DS</th>
+          <td>+ Individual 3P <br>+ Assisted 3P <br>+ Opp. #3P Shots</td>
+          <td>+ #3P Shots</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>TTP</th>
+          <td>- Possession <br>+ #2P Shots</td>
+          <td>+ #Individual Actions</td>
+          <td></td>
+          <td>+ Opp. Fouling</td>
+        </tr>
+        <tr>
+          <th>CTB</th>
+          <td>+ Off. Quickness <br>- Def. Quickness <br>- Def. Positioning</td>
+          <td></td>
+          <td></td>
+          <td>+ Off. Rebounds</td>
+        </tr>
+        <tr>
+          <th>IS</th>
+          <td>- Off. Positioning</td>
+          <td>+ #2P Shots</td>
+          <td>+ Assisted 2P <br>+ Individual 2P</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Defensive Tactics</h4>
+    <b>Sprint back on defense (SBOD)</b> - Your players will focus more on getting a good organised defense. But with this in mind, they might lose a bit of focus during offense, after a shot is made - so your team's offensive rebounding will suffer a bit.  <br/>
+
+    <br/><b>Contest every shot (CES)</b> - The main idea is to prevent the opponent from scoring. Whenever they'll shoot, your players will try to intervene. So it's very important for your players to be smart at avoiding fouls - as the risk of them occurring is increased by the extra aggressiveness. Your opponents turnovers will increase as a result of the constant harassment.<br/>
+
+    <br/><b>Block out and rebound (BOAR)</b> - This instruction privileges your rebounders, they are instructed to block out and rebound on every shot. Your players will be quicker to react in defense, but while your team is focused on rebounding, the opponents will have plenty of time to organise their defense. <br/>
+
+    <br/><b>Protect power zone (PPZ)</b> - Your players will try to prevent opponents from dribbling or passing into the paint, but this can backfire if your opponent has sharp 3P shooters.<br/>
+
+    <br/><b>Wear out the opponents (WOO)</b> - Your players will wear out their opponent's players by preferring a man-to-man defense effectively shadowing them on every action. As a result their possession will suffer and all individual actions will be harder to perform. Unfortunately, a smart opponent can exploit your defense with a good passing style. <br/>
+
+    <br/><b>Half court trap (HCT)</b> - The Forward guards the ball handler and is trying to disrupt any quick passing with his impressive wingspan. The center stands around the free throw line with a guard protecting the low post. The other two players stand on either side of the center with all 3 players keeping their arms stretched out. As a result, the adversary will have a hard time finding those sweet assists. But as your team has a higher defense, they might end up snatching a few extra rebounds.<br/>
+
+    <h4>Offensive Tactics</h4>
+    <b>Read the defense (RTD)</b> - "Think before you move! Try to take advantage of the defenses' weaknesses." This is what you'll be telling players and as they will "move and pass with a purpose" they are likely to make less turnovers and favour a passing style during the match. But for some thinking can be a bit slow (just look at their faces...) so your attacks will be slower than usual. <br/>
+
+    <br/><b>Fast early breaks (FEB)</b> - Fast break is all about pushing the ball up the court before the defense has a chance to set up. Your offense will clearly benefit from the better positions they win and increased attacking quickness, but you might end up with a few lost defensive rebound opportunities as your forward will be more focused on transitioning to offense rather than fighting for the loose ball.<br/>
+
+    <br/><b>Distance shooting (DS)</b> - Facing a though and tight defense? Maybe it's time to surprise them with more distance shots. Extra bonus if their shooting is low, as they will try to keep up with your sniper shots and probably fail.<br/>
+
+    <br/><b>Try to penetrate (TTP)</b> - By telling your players to penetrate more, you can expect more contacts to occur. It's very likely that your players will get fouled more as a consequence. So this tactical approach is not recommended if your players are not at least decent freethrow shooters. Make sure you have very able guards, as they will look at more individual actions and more shots - sometimes even when they shouldn't. <br/>
+
+    <br/><b>Crash the boards (CTB)</b> - Some people just want to watch the basket burn with action. If you're one of them and you have a few capable rebounders, then you can try this approach. Your players will stay on the edge in offense, having quick reactions and fighting fiercely for every loose ball. Your defense though might take a small hit from this.<br/>
+
+    <br/><b>Inside shooting (IS)</b> - It's the opposite approach to distant shooting. If you don't feel confident about your players shooting threepointers or if you feel very confident about their close range shooting, this is the instructions you should give. But your attacks will lose a bit of wideness - meaning some players will not be able to get the best positioning.<br/>
+
+    <h4>Normal Approach</h4>
+
+    <b>Normal (N)</b> - Players will play defense/offense in a sort of balanced way, depending on their general basketball ability. It's usually not a recommended choice, as any other tactic will give you an edge, but is definitely better than choosing a very wrong tactic. Could be used as a new manager or when you have multiple new players in your team and you want to assess their abilities without other influences.<br/>
+
+  </div>
+  <div class="card-action">
+    <a href="/help-and-rules/match-sim">Previous - Match Simulation</a>
+    <a href="/help-and-rules/training">Next - Training</a>
+  </div>
+</div>
+</template>

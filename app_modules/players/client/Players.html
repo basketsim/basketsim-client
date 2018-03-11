@@ -1,0 +1,29 @@
+<template name="Players">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-image-header senior-team">
+          <div class="card-title">The Team</div>
+        </div>
+        <div class="card-content half-side-padding black-text">
+          <div class="mini-players">
+            {{#each players}}
+              {{>MiniPlayer player=this}}
+            {{/each}}
+          </div>
+        </div>
+<!--         <div class="card-action">
+          <a href="#">Sort By </a>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="row">
+        {{#each players}}
+          {{>Player player=this}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

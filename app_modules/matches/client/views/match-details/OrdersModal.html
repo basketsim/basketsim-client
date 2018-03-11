@@ -1,0 +1,92 @@
+<template name="OrdersModal">
+      <div class="card white" style="margin-bottom: 0px;">
+        <div class="card-header red" style="padding: 10px 20px 10px 20px;">
+          <div class="card-close-btn">
+            <a class="ion-ios-close card-close" title="Close player selection modal" href="#"></a>
+          </div>
+          <div class="card-title">Select your {{this.position}}</div>
+        </div>
+          <div class="card-content black-text" style="padding-left: 5px; padding-bottom: 0px; padding-right: 0px;">
+            <div style="padding-right:10px" class="row">
+              <div class="col-xs-12">
+                <h4 style="font-size: 18px;font-weight: 400;padding-left: 0px;padding-bottom: 0px;margin-top: 0px;padding-top: 0px;">Current {{formatGroup this.group}} {{this.position}}: </h4>
+                <div style="margin-bottom: 8px;" class="panel-group" id="accordion-selected" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading-selected">
+                      <div class="tactics-info">
+                        <div class="tactics-pos blue">
+                          {{this.position}}
+                        </div>
+                        <div class="tactics-player-name">
+                          <h2 class="panel-title">
+                            <a title="Expand {{this.player.name}} {{this.player.surname}}" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-selected" href="#collapse-selected" aria-expanded="false" aria-controls="collapse-selected">
+                              <span class="arrow-collapse-player ion-chevron-down"></span> {{{this.player.name}}} {{{this.player.surname}}}
+                            </a>
+                          </h2>
+                        </div>
+<!--                         <div class="tactics-title-change">
+
+                        </div> -->
+                      </div>
+                    </div>
+                    <div id="collapse-selected" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-selected">
+                      <div class="panel-body" style="padding:0px">
+                        {{#if this.player.name}}
+                          {{>MiniPlayerDetails player=this.player display=displayOptionsFace}}
+                        {{else}}
+                          <div style="padding:10px; padding-left: 6px; font-weight: 800;">No {{this.position}} selected</div>
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="height:{{listHeight}}px; overflow:auto; padding-right:10px" class="row">
+              <div class="col-xs-12">
+                <div class="panel-group" id="accordion-players" role="tablist" aria-multiselectable="true">
+                  {{#each players}}
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading-{{this._id._str}}-players">
+                          <div class="tactics-info">
+                            <div style="padding-top:0px" class="tactics-pos blue">
+                              <img style= "height:40px; width:40px" class="player-face" src="//faces.basketsim.com?id={{this._id._str}}" alt="">
+                            </div>
+                            <div class="tactics-player-name" style="min-width:0px">
+                              <h2 class="panel-title">
+                                <a title="Expand {{this.name}} {{this.surname}}" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-players" href="#collapse-{{this._id._str}}-players" aria-expanded="false" aria-controls="collapse-{{this._id._str}}-players">
+                                  <span class="arrow-{{this._id._str}}-players ion-chevron-down"></span> {{{fullName}}}
+                                </a>
+                              </h2>
+                            </div>
+                            <span style="padding-top: 3px;padding-bottom: 2px;font-size: 10px; margin-top: 12px; margin-left: 0px; background-color: #38435e;" class="badge">{{playerPosition this}}</span>
+                            <div class="tactics-title-change">
+                              <a style="font-weight:800" class="tactics-change-player" href="#" title="Set {{this.player.name}} {{this.player.surname}}">
+                                SET
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="collapse-{{this._id._str}}-players" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{this._id._str}}-players">
+                          <div class="panel-body" style="padding:0px">
+                            {{>MiniPlayerDetails player=this display=displayOptions}}
+                            <div class="card-action" style="float: left; padding: 14px; padding-left: 6px; padding-top: 6px; width: 100%; border-top: 1px solid rgba(160, 160, 160, 0.2);">
+                              <a style="font-weight:800" class="tactics-change-player" title="Set {{this.player.name}} {{this.player.surname}}" href="#">
+                                SET
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+
+        </div>
+<!--         <div class="card-action">
+          <a href="#" class="market-search">Search </a>
+        </div> -->
+      </div>
+</template>

@@ -1,0 +1,15 @@
+<template name="PlayerOptions">
+  {{#each players}}
+    <div class="col-xs-12 col-sm-6">
+      <div class="collection players-option">
+        <div class="col-content {{lastRow}}">
+          <div class="col-title"><a href="/players/{{this._id._str}}">{{{this.name}}} {{{this.surname}}}</a></div>
+          <div class="col-subtitle">
+              {{this.age}} years old from {{this.country}}. {{this.height}} cm, {{round this.weight}} kg.
+              This player is {{this.character}}. He earns {{dotify this.wage}} $ / week. EV: {{dotify ev}} $
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</template>

@@ -1,0 +1,91 @@
+<template name="LeagueStats">
+  <div class="card white">
+    <div class="card-header tactics blue">
+      <div style="font-size:14px" class="card-title tactics">
+        {{{title}}}
+      </div>
+    </div>
+    <div class="card-content black-text" style="padding:20px 10px 15px 10px">
+
+  <!-- Summary -->
+  <div class="summary">
+    <div class="row totals-summary">
+      <div class="col-xs-12 col-sm-6">
+        <div class="table-responsive" style="border:none">
+          <table class="table stats-table table-condensed">
+          <tbody>
+            {{{overview 'totals' 'first'}}}
+          </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="table-responsive" style="border:none">
+          <table class="table stats-table table-condensed">
+          <tbody>
+            {{{overview 'totals' 'second'}}}
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row perMatch-summary" style="display: none">
+      <div class="col-xs-12 col-sm-6">
+        <div class="table-responsive" style="border:none">
+          <table class="table stats-table table-condensed">
+          <tbody>
+            {{{overview 'perMatch' 'first'}}}
+          </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="table-responsive" style="border:none">
+          <table class="table stats-table table-condensed">
+          <tbody>
+            {{{overview 'perMatch' 'second'}}}
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row top-perstat" style="display: none">
+      <div class="col-xs-12 col-sm-6">
+        <div class="table-responsive" style="border:none">
+          <table class="table stats-table table-condensed">
+          <tbody>
+            {{{top reactiveStat statType}}}
+          </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="table-responsive" style="border:none">
+          <table class="table stats-table table-condensed">
+          <tbody>
+            {{{topOwn reactiveStat statType}}}
+          </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+    <div class="card-action">
+      <!-- {{{statUrls}}} -->
+      <a class="stats-per-match totals-summary" href="#" >Show Stats Per Match</a>
+      <a class="stats-totals perMatch-summary" href="#" style="display: none">Show Total Stats</a>
+      <a class="show-summary" href="#" style="display: none">Back to Summary</a>
+      <br>
+      <a style="padding-top:5px" class="show-league" href="#">Back to League Standings</a>
+
+    </div>
+  </div>
+</template>

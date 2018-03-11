@@ -1,0 +1,13 @@
+<template name="PlayerList">
+	Add Players <br>
+  <form class="new-players">
+    <input type="text" name="amount" placeholder="No. of players to generate" />
+    <input type="text" name="team" placeholder="Team owning them" />
+    <input type="submit">
+  </form>
+	<ul>
+	{{#each player}}
+		<li class="player {{selectedClass}}">{{name}} - Handling: {{attrs.handling}}</li>
+	{{/each}}
+	</ul>
+</template>

@@ -1,0 +1,12 @@
+<template name="MiniPlayer">
+  <a href="/{{checkType}}/{{player._id._str}}" class='initials-mini'>
+    <div class="mini-player">
+      <div class="shirt">
+        <img class="shirt" src="/resources/shirts/{{jersey}}.gif" alt="{{team.name}} Shirt">
+      </div>
+      <div class="initials">
+        {{{player.surname}}}
+      </div>
+    </div>
+  </a>
+</template>

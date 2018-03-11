@@ -1,0 +1,18 @@
+<template name="MatchDetails">
+<!-- This is ugly because of Blaze and Meteor -->
+{{#if isState match "UNFINISHED_OWN"}}
+  {{> MatchOrders match=match}}
+{{else}}
+  {{#if isState match "UNFINISHED_NOT_OWN"}}
+    {{> MatchPreview match=match}}
+  {{else}}
+    {{#if isState match "LIVE"}}
+      {{liveRedirect match}}
+    {{else}}
+      {{#if isState match "FINISHED"}}
+        {{> MatchSummary match=match}}
+      {{/if}}
+    {{/if}}
+  {{/if}}
+{{/if}}
+</template>

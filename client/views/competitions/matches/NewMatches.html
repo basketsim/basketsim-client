@@ -1,0 +1,31 @@
+<template name="NewMatches">
+  {{#each matches}}
+      <div class="col-xs-12 col-lg-6">
+      <div class="collection">
+        <div class="col-avatar">
+          <img class="img-responsive title-image float-right" src="{{compLogo.img}}" alt="League Trophy Icon">
+        </div>
+        <div class="col-content" style="max-width:65%">
+          <div class="col-title matches"><a href="/teams/{{this.homeTeam.join._id._str}}">{{this.homeTeam.join.name}}</a> - <a href="/teams/{{this.awayTeam.join._id._str}}">{{this.awayTeam.join.name}}</a></div>
+          <div class="col-subtitle">
+            {{getTime this.dateTime.timestamp}} <br>
+            {{#if this.state.finished}}
+              <div class="score"><a style="color:black" href="/matches/{{this._id}}">{{score}}</a></div>
+            {{else}}
+              {{hasTactics}}
+            {{/if}}
+          </div>
+        </div>
+          {{#if hideArrow=true}}
+            <i></i>
+          {{else}}
+            <i class="material-icons col-icon"><a href="/matches/{{this._id}}">send</a></i>
+          {{/if}}
+      </div>
+    </div>
+  {{/each}}
+
+  {{#if noMatches matches}}
+    <div><h5 style="text-align: center">Matches for this round have not been drawn yet</h5></div>
+  {{/if}}
+</template>

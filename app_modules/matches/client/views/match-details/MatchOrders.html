@@ -1,0 +1,164 @@
+<template name="MatchOrders">
+  <div class="card white">
+    <div class="card-image-header team-matches">
+      <div class="card-title with-sub">Match Orders</div>
+      <div class="card-subtitle"><a class="discrete dwhite" href="/teams/{{match.homeTeam.id._str}}">{{{match.homeTeam.name}}}</a> -
+      <a class="discrete dwhite" href="/teams/{{match.awayTeam.id._str}}">{{{match.awayTeam.name}}}</a></div>
+    </div>
+  </div>
+  <div class="card-content black-text">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <h4 style="font-size: 22px; font-weight:400; padding-left:0px; padding-bottom:0px">Starting Five</h4>
+          <div class="panel-group" id="accordion-STARTING" role="tablist" aria-multiselectable="true">
+            {{#each positions}}
+              {{#with playerOnPos this "startingFive"}}
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading-{{this.pos}}-STARTING">
+                <div class="tactics-info">
+                  <div class="tactics-pos blue">
+                    {{this.pos}}
+                  </div>
+                  <div class="tactics-player-name">
+                    <h2 class="panel-title">
+                      <a title="Expand {{this.player.name}} {{this.player.surname}}" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-STARTING" href="#collapse-{{this.pos}}-STARTING" aria-expanded="false" aria-controls="collapse-{{this.pos}}-STARTING">
+                        <span class="arrow-{{this.pos}}-STARTING ion-chevron-down"></span> {{{this.player.name}}} {{{this.player.surname}}}
+                      </a>
+                    </h2>
+                  </div>
+                  <div class="tactics-title-change">
+                      <a class="tactics-change-player" href="#" title="Change {{this.player.name}} {{this.player.surname}}">
+                        <span class="ion-arrow-down-c tactics-change-player-arrow"></span>
+                        <span style="margin-left:-3px" class="ion-arrow-up-c tactics-change-player-arrow"></span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+              <div id="collapse-{{this.pos}}-STARTING" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{this.pos}}-STARTING">
+                <div class="panel-body" style="padding:0px">
+                  {{#if this.player.name}}
+                    {{>MiniPlayerDetails player=this.player display=displayOptions}}
+                  {{else}}
+                    <div style="padding:10px; padding-left: 6px; font-weight: 800;">No {{this.pos}} selected</div>
+                  {{/if}}
+                  <div class="card-action" style="font-weight:400; float: left; padding: 14px; padding-left: 6px; padding-top: 6px; width: 100%; border-top: 1px solid rgba(160, 160, 160, 0.2);">
+                    <a class="tactics-change-player" title="Change Player" href="#">
+                      Change
+                      <span class="ion-arrow-down-c tactics-change-player-arrow"></span>
+                      <span style="margin-left:-3px" class="ion-arrow-up-c tactics-change-player-arrow"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+              {{/with}}
+            {{/each}}
+          </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <h4 style="font-size: 22px; font-weight:400; padding-left:0px; padding-bottom:0px">Substitutions</h4>
+          <div class="panel-group" id="accordion-SUBS" role="tablist" aria-multiselectable="true">
+            {{#each positions}}
+              {{#with playerOnPos this "subs"}}
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading-{{this.pos}}-SUBS">
+                <div class="tactics-info">
+                  <div class="tactics-pos blue">
+                    {{this.pos}}
+                  </div>
+                  <div class="tactics-player-name">
+                    <h2 class="panel-title">
+                      <a title="Expand {{this.player.name}} {{this.player.surname}}" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-SUBS" href="#collapse-{{this.pos}}-SUBS" aria-expanded="false" aria-controls="collapse-{{this.pos}}-SUBS">
+                        <span class="arrow-{{this.pos}}-SUBS ion-chevron-down"></span> {{{this.player.name}}} {{{this.player.surname}}}
+                      </a>
+                    </h2>
+                  </div>
+                  <div class="tactics-title-change">
+                      <a class="tactics-change-player" href="#" title="Change {{this.player.name}} {{this.player.surname}}">
+                        <span class="ion-arrow-down-c tactics-change-player-arrow"></span>
+                        <span style="margin-left:-3px" class="ion-arrow-up-c tactics-change-player-arrow"></span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+              <div id="collapse-{{this.pos}}-SUBS" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{this.pos}}-SUBS">
+                <div class="panel-body" style="padding:0px">
+                  {{#if this.player.name}}
+                    {{>MiniPlayerDetails player=this.player}}
+                  {{else}}
+                    <div style="padding:10px; padding-left: 6px; font-weight: 800;">No {{this.pos}} selected</div>
+                  {{/if}}
+                  <div class="card-action" style="float: left; padding: 14px; padding-left: 6px; padding-top: 6px; width: 100%; border-top: 1px solid rgba(160, 160, 160, 0.2);">
+                    <a class="tactics-change-player" title="Change Player" href="#">
+                      Change
+                      <span class="ion-arrow-down-c tactics-change-player-arrow"></span>
+                      <span style="margin-left:-3px" class="ion-arrow-up-c tactics-change-player-arrow"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+              {{/with}}
+            {{/each}}
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-action" style="margin-bottom: 100px; background-color: #38435e; padding: 10px 8px 10px 8px;">
+      <div class="tactics-action">
+      <table style="float:left; margin-right: 8px;">
+        <tbody>
+          <tr>
+            <td><div style="color:#f4f4f4">Defensive: </div></td>
+            <td>
+              <div class="dropdown">
+                <button style="background-color: #38435e; border: none;" class="dropdown-toggle" type="button" id="tactics-def-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  {{selectedStrategy "defensive"}}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="tactics-def-dropdown">
+                  {{#each defTactics}}
+                  <li><a href="#" title={{this.name}} class="tactics-strategy-selection">{{this.name}}</a>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table style="float:left">
+        <tbody>
+          <tr>
+            <td><div style="color:#f4f4f4">Offensive: </div>  </td>
+            <td>
+              <div class="dropdown">
+                <button style="background-color: #38435e; border: none;" class="dropdown-toggle" type="button" id="tactics-off-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  {{selectedStrategy "offensive"}}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="tactics-off-dropdown">
+                  {{#each offTactics}}
+                  <li><a href="#" title={{this.name}} class="tactics-strategy-selection">{{this.name}}</a>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="clear: both;"></div>
+      </div>
+      <a href="#" title="Submit Tactics" class="submit">Submit</a>
+      <a href="#" title="Set default tactics" class="submit-default">Set Default</a>
+      <a href="#" title="Swap tactics" class="swap">Swap</a>
+      <a href="#" title="Clear tactics" class="clear">Clear</a>
+      <a href="#" title="Add match to live" class="add-to-live">Add to Live</a>
+    </div>
+  </div>
+
+</template>

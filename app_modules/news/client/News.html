@@ -1,0 +1,6 @@
+<template name="News">
+  {{#each eventsList}}
+    <!-- color the date based on the event type -->
+    <p><span class="blue-text">{{date}}</span> {{{text}}}</p>
+  {{/each}}
+</template>

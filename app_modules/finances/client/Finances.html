@@ -1,0 +1,127 @@
+<template name="Finances">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="card white">
+          <div class="card-image-header income">
+            <div class="card-title">Income</div>
+          </div>
+          <div class="card-content half-side-padding black-text" style="padding:20px 4px 15px 4px">
+            <div class="row">
+              <div class="col-xs-6" style="margin-bottom:15px">
+              <table class='table table-condensed finances'>
+                  <thead>
+                  <tr>
+                    <th class="finances-header-width" style="font-size:14px;  border-color: #DEDEDE;border-width: 1px;" colspan="2">Recurrent</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="finances-header-width" style=" border: none;">
+                        <a style="color: black" tabindex="0" role="button" data-toggle="popover" placement="bottom" data-trigger="focus" data-content={{status.sponsors.info}}>
+                          <span style="color:#ffab40" class="info-salaries ion-information-circled"></span> Sponsors
+                        </a>
+                      </th>
+                      <td>{{ dotify status.sponsors.value }} $</td>
+                    </tr>
+                    <tr>
+                      <th class="finances-header-width" style=" border: none;">
+                        <a style="color: black" tabindex="0" role="button" data-toggle="popover" placement="bottom" data-trigger="focus" data-content={{status.advertising.info}}>
+                          <span style="color:#ffab40" class="info-salaries ion-information-circled"></span> Ad Sales
+                        </a>
+                      </th>
+                      <td>{{ dotify status.advertising.value }} $</td>
+                    </tr>
+                  </tbody>
+              </table>
+              </div>
+
+              <div class="col-xs-6">
+              <table class='table table-condensed finances'>
+                <thead>
+                  <tr>
+                    <th class="finances-header-width" style="font-size:14px;  border-color: #DEDEDE;border-width: 1px;" colspan="2">Temporary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="finances-header-width" style=" border: none;">Tickets</th> <!-- The ones you sign contracts with -->
+                    <td>{{ dotify status.tickets }} $</td>
+                  </tr>
+                {{#each offers}}
+                  <tr>
+                    <th class="finances-header-width" style=" border: none;"><a href="/players/{{player._id._str}}">{{{player.name}}}</a></th>
+                    <td>{{dotify bid}}$</td>
+                  </tr>
+                {{/each}}
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+          <div class="card-action">
+            <span style="font-weight:400;color:#394CA3">Budget: {{dotify team.curmoney}}$</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6">
+        <div class="card white">
+          <div class="card-image-header expenses">
+            <div class="card-title">Expenses</div>
+          </div>
+          <div class="card-content half-side-padding black-text" style="padding:20px 4px 15px 4px">
+            <div class="row">
+              <div class="col-xs-6" style="margin-bottom:15px">
+              <table class='table table-condensed finances'>
+                  <thead>
+                  <tr>
+                    <th class="finances-header-width" style="font-size:14px;  border-color: #DEDEDE;border-width: 1px;" colspan="2">Recurrent</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="finances-header-width" style=" border: none;">
+                        <a style="color: black" tabindex="0" role="button" data-toggle="popover" placement="bottom" data-trigger="focus" data-content="Next salary expenses: {{dotify status.currSalaries}}">
+                          <span style="color:#ffab40" class="info-salaries ion-information-circled"></span> Salaries
+                        </a>
+                      </th>
+                      <td>{{ dotify status.paidSalaries }} $</td>
+                    </tr>
+                    <tr>
+                      <th class="finances-header-width" style=" border: none;">Cheeleaders</th>
+                      <td>{{ dotify status.cheerleaders }} $</td>
+                    </tr>
+                  </tbody>
+              </table>
+              </div>
+
+              <div class="col-xs-6">
+              <table class='table table-condensed finances'>
+                <thead>
+                  <tr>
+                    <th class="finances-header-width" style="font-size:14px;  border-color: #DEDEDE;border-width: 1px;" colspan="2">Temporary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="finances-header-width" style=" border: none;">Youth Promotion</th> <!-- The ones you sign contracts with -->
+                    <td>{{ dotify status.youth }} $</td>
+                  </tr>
+                  {{#each sentBids}}
+                    <tr>
+                      <th class="finances-header-width" style=" border: none;"><a href="/players/{{player._id._str}}">{{{player.name}}}</a></th>
+                      <td>{{dotify bid}}$</td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+          <div class="card-action">
+            <span style="font-weight:400;color:#394CA3">Available money: {{dotify team.tempmoney}}$ </span>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>

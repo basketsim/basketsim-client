@@ -1,0 +1,16 @@
+<template name="TeamStatsCard">
+  <div class="card white" style="margin: 0">
+    <div class="card-header tactics red">
+      <div class="header-text white-text">
+        <div class="card-title tactics">{{name}} - {{title}}</div>
+      </div>
+    </div>
+    <div class="card-content half-side-padding black-text" style="padding: 15px 10px 15px 10px; overflow:auto">
+      {{>StatsTable stats=stats statType=getStatType}}
+    </div>
+    <div class="card-action">
+      <a class='stats-total' href="#" style="display: none">Stats Total</a>
+      <a class='stats-per-game' href="#">Stats Per Match</a>
+    </div>
+  </div>
+</template>

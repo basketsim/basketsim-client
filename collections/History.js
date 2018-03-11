@@ -1,0 +1,1 @@
+global.History = new Mongo.Collection('history', {idGeneration: 'MONGO'});

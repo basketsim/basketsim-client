@@ -1,0 +1,47 @@
+<template name="TransferFlags">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card white">
+        <div class="card-image-header market">
+          <div class="card-title">Transfer Flags</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      {{#each flags}}
+        <div style="margin-bottom: 50px">
+          {{> TransferDetails transferID=this.transfer_id._str headerDisplay="none"}}
+          {{#each this.flags}}
+            <div class="row" id="{{this._id._str}}">
+              <div class="col-xs-12">
+                <div class="card blue" style="margin-bottom: 5px;">
+                  <div class="card-content white-text-weak auto-flow" style="padding: 15px;">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a target="_blank" href="/club/{{this.flagger_userinfo_id._str}}">Flagger</a><br>
+                        {{date this.date}}
+                      </div>
+                      <div class="col-xs-8">
+                        {{this.flagger_comment}}
+                      </div>
+                    </div>
+                    <div style="margin-top: 8px" class="row">
+                      <div class="col-xs-3 shrink-left" style="font-weight: 400; padding-top: 4px;">Score and Close Flag:</div>
+                      <div class="col-xs-3 shrink" style="padding-left: 0px"><button data-flag="fake" type="button" class="btn send-flag market-mon-btn btn-default">Fake Flag</button></div>
+                      <div class="col-xs-2 shrink" style="padding-left: 0px"><button data-flag="disagree" type="button" class="btn send-flag market-mon-btn btn-default">Disagree</button></div>
+                      <div class="col-xs-2 shrink" style="padding-left: 0px"><button data-flag="useful" type="button" class="btn send-flag market-mon-btn btn-default">Useful</button></div>
+                      <div class="col-xs-2 shrink" style="padding-left: 0px"><button data-flag="great" type="button" class="btn send-flag market-mon-btn btn-default">Great Flag</button></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>

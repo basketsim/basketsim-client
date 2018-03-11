@@ -1,0 +1,46 @@
+<template name="PlayerSummary">
+<div class="table-responsive">
+  <table class="table table-condensed table-striped league player-summary {{whichTeam}}">
+    <thead>
+      <tr>
+        <th style="text-align: left; padding-left:3px">Player</th>
+        <th>EFF</th>
+        <th>PTS</th>
+        <th>2P</th>
+        <th>2P%</th>
+        <th>3P</th>
+        <th>3P%</th>
+        <th>FT</th>
+        <th>FT%</th>
+        <th>REB</th>
+        <th>AS</th>
+        <th>FO</th>
+        <th>ST</th>
+        <th>TO</th>
+        <th>BL</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each playerRatings whichTeam true}}
+        <tr>
+            <td style="text-align: left; padding-left:3px"><a class="discrete" href="/players/{{_id._str}}">{{{name}}}</a></td>
+            <td>{{getEfficency}}</td>
+            <td>{{getPoints}}</td>
+            <td>{{ratings.twoPoints.converted}}/{{total "twoPoints"}}</td>
+            <td>{{percentage "twoPoints"}}%</td>
+            <td>{{ratings.threePoints.converted}}/{{total "threePoints"}}</td>
+            <td>{{percentage "threePoints"}}%</td>
+            <td>{{ratings.freeThrows.converted}}/{{total "freeThrows"}}</td>
+            <td>{{percentage "freeThrows"}}%</td>
+            <td>{{ratings.rebounds.defensive}}+{{ratings.rebounds.offensive}}</td>
+            <td>{{ratings.assists}}</td>
+            <td>{{ratings.fouls}}</td>
+            <td>{{ratings.steals}}</td>
+            <td>{{ratings.turnovers}}</td>
+            <td>{{ratings.blocks}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+</template>

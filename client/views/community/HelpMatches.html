@@ -1,0 +1,50 @@
+<template name="HelpMatches">
+{{>HelpMenu}}
+<div class="card white">
+  <div class="card-header red">
+    <div class="card-title white-text">Matches</div>
+  </div>
+  <div class="card-content no-pad-top white black-text">
+    <p>The Basketsim week is packed with activity and competition! The more involved you are, more competitions you can play in.</p>
+    <p><strong>Sunday</strong> - League matches in all countries are played.</p>
+    <p><strong>Monday</strong> - Start your week with a thrilling Cup Game. It's all or nothing, you lose and you're out. But don't worry, once you are eliminated you can challenge your friends for a easy-going friendly game.</p>
+    <p><strong>Tuesday</strong> - It's interantional day! Three competitions for the top-performing teams of last season: CS, CWS and LWS. If you're not into any, it's a good opportunity for you and your players to catch your breath, you will need it for the rest of the week! </p>
+    <p><strong>Wednesday</strong> - Rested or tired, you have to face your league opponents again, it's national match day!</p>
+    <p><strong>Thursday</strong> - Break time! Now it's really a chance for your players to rest, as some of them might have national duties tommorow.</p>
+    <p><strong>Friday</strong> - It's all about your country's pride. Let your elected manager gather the best of your nation and face opponents from all around the globe. World Cup matches for seniors and juniors are played</p>
+    <p><strong>Saturday</strong> - What a busy week! You can rest, study the market at peace, or wait - you can play for glory in the biggest competition - FPC.</p>
+
+    <h4>Match Day</h4>
+    Up to 30 minutes before the match starts you can set the lineup and give tactical orders. You need to read chapters <a href="/help-and-rules/tactics">tactics</a>, <a href="/help-and-rules/match-engine">match engine</a>, <a href="/help-and-rules/players">players</a> and <a href="/help-and-rules/match-engine">player character</a>, to understand exactly what choices you have. But basically, it's always a good idea to set up all 10 players (5 in the starting team and 5 on the bench), else, random players will be picked from your squad to fill the missing spots in your team. <br>
+    If a team has less than 5 players on the court, a walkover occurs, resulting in an automatic loss, no matter what the score was up to that point. If both teams start the match with less then 5 players set to play, away team losses the match.<br/>
+
+    <br/>When the match starts, you can watch it in live mode if you are online at the time. You can even watch the changing of the statistics during the match and if you want to watch multiple matches you can do so by adding matches to the multiview. Multiview is the suggested method of watching matches in live mode as it is fast and more fun, due to the fact that you can watch matches of your friends or opponents alongside your own match and you also get to see the time played, so at any moment you know exactly how much time is left in the game.<br/>
+
+    <br/><strong>There are a few events that happen every time your team plays a match:</strong><br/>
+    - all starting players receive a certain amount of experience based on the type of match they play<br/>
+    - all starting players get tired, again, based on the match type<br/>
+    - all starting players receive a new personal star rating, replacing the previous one<br/>
+    - all starting players get marked to receive training on the following thursday.<br/>
+    - any player involved in the match has a chance of injury, based on the level of your medical center and the character of the player<br/>
+    - if it's a competition match, players get their personal statistics updated immediately after the match.<br/>
+
+    <h4>Attendance</h4>
+    Every home match and every cup match gives you a certain amount of money from ticket sales. Attendance is influenced by the size and seating types of your arena, the size of your fanclub, the mood of your cheerleaders and the number of entertaining players in the starting five. League, cup and international matches are also important as they influence the mood of fans and determine how many will join in the following update. A few minutes after league matches end in one country, the league standings are updated. League statistics are updated when matches in all countries end (i.e. on mondays and/or thursdays in the early morning).
+
+    <h4>League system</h4>
+    Every nation in Basketsim has at least three league levels. There is a single top division in each country, three second-level divisions and 9 third-level divisions. Some countries also have 4th and 5th level with 27 and 81 leagues - this depends on the amount of users in a country. Every league in Basketsim has 14 participants and teams play twice to each other in a season, once at home and once away from home. After 26 rounds winner of every league below top level is promoted to higher level and winner of top league in a country is crowned as national champion. Second placed teams play playoff matches at home in their attempt to reach higher level league as well. There is a single match and they play against 9th to 11th placed teams from higher level leagues. Teams placed 12th to 14th are relegated to bottom level, unless they already play in lowest level league in a country.<br/><br/>If two teams end up with the same score after 26 rounds of league they are divided based on better points difference (amount of points scored in a season minus amout of points received). If their point difference is the same, they are divided based on more points scored only.<br/>
+
+    <h4>National Cup</h4>
+    In every country a National Cup is played each season. Teams are drawn to play matches and every match is decisive, the winning team being promoted to the next round, while the losing team being knocked out of the Cup. To win the National Cup, a team must win all rounds. In countries with 5 level leagues best 1024 teams from the previous season compete, while in countries with 3 or 4 level leagues all teams compete in cup, but some do not play in the first round and start in the second round instead. The draw is semi-seeded and it prefers active teams to play against bot teams at home in the first few rounds. Attendance money is split 50% - 50% between both teams in all matches. There is no home advantage in cup matches. You can check your National Cup in the menu under Leagues by clicking the National Cup link. There you can also check progress of cups in other countries. Besides the honorable trophy and money prizes which can be won, some of the best contestants from each National Cup qualify for the next season's Cup Winners Series.<br/>
+
+    <br/><big>THE ENGINE</big><br/>
+
+    <br/>To determine most precisely how the game engine works you should study other chapters of the rules as well, especially parts about tactics and players. Every time when one team is in possession they have certain chances what will happen next. Either they will shoot, lose the ball or there will be a foul commited on the player who is handling the ball. There is some standard distribution for events so that statistics at the end are similar to real basketball matches. Managers can attempt to increase or decrease occurance of events with tactical choices and with team built up from players with certain skills. The second option is most valid in a case of turnovers and personal fouls. At the half time reporters will express their opinion on which team is the better defensive team in the match, which means that they have a tendency to commit less personal fouls in the game. This doesn't mean that better defensive team should make less personal fouls in every match and it doesn't mean that better defensive team should receive less points as this highly depend on the quality of opposing shooters.<br/>
+
+  </div>
+  <div class="card-action">
+    <a href="/help-and-rules/introduction">Previous - Introduction</a>
+    <a href="/help-and-rules/players">Next - Players</a>
+  </div>
+</div>
+</template>

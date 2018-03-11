@@ -1,0 +1,19 @@
+<template name="PheonixPlayoff">
+  <div class="card white">
+    <div class="card-header tactics red">
+      <div class="card-title tactics">Playoff - Round {{getCurrentRound}}</div>
+    </div>
+    <div class="card-content half-padding black-text" style="max-height:400px; overflow:auto">
+      <div class="row">
+        <div class="col-xs-12">
+          {{>NewMatches matches=getMatches hideArrow=true}}
+        </div>
+      </div>
+    </div>
+    <div class="card-action">
+      {{#each rounds}}
+      <a href="#" class="round" data-round='{{this.round}}'> {{this.name}}</a>
+      {{/each}}
+    </div>
+  </div>
+</template>

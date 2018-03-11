@@ -1,0 +1,84 @@
+<template name="Header">
+	<div class="container-fluid header-shadow">
+		<div class="row red">
+		<!-- <div class="col-xs-1"> </div> -->
+			<div class="col-xs-4 col-sm-2 col-md-1 col-lg-offset-1 col-lg-1 title">
+				<a href="#" title="Basketsim Basketball Manager Home">
+					<img class="title-logo" src="/material/web-size/bs-logo.png" alt="Basketsim">
+				</a>
+			</div>
+			<div class="col-xs-4 col-sm-7 col-md-8 col-lg-7">
+			{{#if currentUser}}
+				<div class="hidden-xs" style="text-align: center; font-size:14px">
+            <!--End of season updates are running. First match of s30 is planned for Sunday if all goes well.<br>-->
+            <!--Meanwhile, inactive teams will be cleaned and some maintenance work performed.-->
+            <!--<br> Training for previous matches will be applied based on the settings you have at the moment of the updates.-->
+
+				    <!-- //some ad code here -->
+				</div>
+				<div class="hidden-sm hidden-md hidden-lg" style="text-align: center; font-size:14px; margin-top: 4%;">
+            <!--Training and league updates will run Friday/Saturday.-->
+				<!-- //some ad code here - but if this becomes super small, you have to change it even more, so you need some js in the header-->
+          <!--Arena upgrades have been enabled-->
+          <!-- replace with 300x100 -->
+				</div>
+<!-- 				<div class="ad468x60 hidden-xs hidden-md hidden-lg">
+					some ad code here
+				</div> -->
+			{{/if}}
+			</div>
+			<div class="col-xs-8 col-sm-3 col-md-3 col-lg-2">
+				<!-- {{> loginButtons}} -->
+<!-- 				<div class="menuBtn">
+					<button type="button" class="btn btn-primary btn-lg logout" style="margin-top:10px">
+					  Logout
+					</button>
+				</div> -->
+				<!-- <div class="news-url">NEWS</div> -->
+				<div class="menu-basic">
+          {{#if currentUser}}
+            <div class="mini-menu visible-xs"><button id="open-tools" style="color: white;font-weight: 400;margin-top: -3px;" class="btn btn-link">TOOLS</button></div>
+            <div class="mini-menu visible-xs">|</div>
+					{{/if}}
+          <div class="mini-menu forum-url"><a href='//forum.basketsim.com' target="_blank">FORUM</a></div>
+					<div class="mini-menu">|</div>
+					{{#if currentUser}}
+					  <div class="mini-menu logout">LOGOUT</div>
+            <div id="search-bar"></div>
+					{{else}}
+					<div class="mini-menu">
+						<a href='#' class='login' style="color: #00FF14">LOGIN</a>
+					</div>
+					{{/if}}
+				</div>
+			</div>
+			<div class="col-lg-1"> </div>
+		</div>
+		{{#if currentUser}}
+		<div class="row menuRow first">
+			<div class="col-md-12 col-lg-offset-1 col-lg-10">
+				<div class="row">
+					<div class="list-group firstMenu">
+					  <a href="/club" class="list-group-item col-xs-3 bs first {{checkActive 'Club'}}">Club</a>
+					  <a href="/players" class="list-group-item col-xs-3 bs {{checkActive 'Team'}}">Team</a>
+					  <a href="/national" class="list-group-item col-xs-3 bs {{checkActive 'Competitions'}}">Competition</a>
+					  <a href="/help-and-rules" class="list-group-item col-xs-3 bs {{checkActive 'Community'}}">Help & Misc</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row menuRow second">
+			<div class="col-md-12 col-lg-offset-1 col-lg-10">
+				<div class="row">
+					<div class="list-group">
+					{{#each submenu.submenu}}
+							<a href="/{{slug this}}" target="{{target this}}" class="list-group-item col-xs-{{submenu.size}} col-sm-2 bs secondaryMenu {{checkActive this}}">{{this}}</a>
+					{{/each}}
+					</div>
+				</div>
+			</div>
+		</div>
+		{{/if}}
+	</div>
+</template>

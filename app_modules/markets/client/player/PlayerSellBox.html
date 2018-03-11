@@ -1,0 +1,56 @@
+<template name="PlayerSellBox">
+  <div class="card white">
+    <div class="card-header tactics red">
+      <div class="header-text white-text">
+        <div class="card-title tactics">Sell {{{player.name}}} {{{player.surname}}}</div>
+      </div>
+    </div>
+    <div class="card-content half-side-padding black-text" style="padding: 15px 10px 15px 10px;">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4">
+          <div class="btn-group" style="width:100%; margin-bottom:0px">
+            <button class="btn btn-default btn-sm dropdown-toggle" style="width:inherit" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Position: {{selectedPosition}}
+              <span class="caret"></span>
+            </button>
+              <ul class="dropdown-menu mk-player-position">
+              <li><a href="#" data-position='PG'>Position: PG</a></li>
+              <li><a href="#" data-position='SG'>Position: SG</a></li>
+              <li><a href="#" data-position='SF'>Position: SF</a></li>
+              <li><a href="#" data-position='PF'>Position: PF</a></li>
+              <li><a href="#" data-position='C'>Position: C </a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+          <div class="btn-group" style="width:100%; margin-bottom:0px">
+            <button class="btn btn-default btn-sm dropdown-toggle" style="width:inherit" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Days: {{selectedDays}}
+              <span class="caret"></span>
+            </button>
+              <ul class="dropdown-menu days-on-market">
+              <li><a href="#" data-days=1>Days: 1</a></li>
+              <li><a href="#" data-days=2>Days: 2</a></li>
+              <li><a href="#" data-days=3>Days: 3</a></li>
+              <li><a href="#" data-days=4>Days: 4</a></li>
+              <li><a href="#" data-days=5>Days: 5</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-5 col-sm-5">
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon">$</span>
+            <input type="text" value=0 class="form-control mk-price" aria-label="Listig Price">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-action" style="padding:10px">
+      {{#if bannedStatus.banned}}
+        <span>You cannot list players while banned. Ban will expire in {{bannedStatus.length}} days.</span>
+      {{else}}
+        <a href="#" class="list-player">Put him on the market! Listing tax: {{auctioneerTax}}$ <span style="font-size:12px">(non-refundable)</span></a>
+      {{/if}}
+    </div>
+  </div>
+</template>

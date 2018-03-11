@@ -1,0 +1,90 @@
+<template name="TransferDetails">
+{{> MarketHeader title="Transfer Details" display=headerDisplay}}
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card blue" style="margin-bottom: 5px;">
+        <div class="card-content white-text-weak auto-flow" style="padding: 15px">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="bids-pic"><img class="player-face" src="//faces.basketsim.com?id={{transfer.player_id._str}}" alt=""></div>
+              <div class="table-responsive" style="float: left;margin-left: 10px;width: 83%;border:none;">
+                <table class="table table-condensed transfer-player-details" style="min-width: 550px">
+                  <thead>
+                  <td style="padding: 1px" class="detail-head">Name</td>
+                  <td style="padding: 1px" class="detail-head">Age</td>
+                  <td style="padding: 1px" class="detail-head">EV</td>
+                  <td style="padding: 1px" class="detail-head">WR</td>
+                  <td style="padding: 1px" class="detail-head">EXP</td>
+                  <td style="padding: 1px" class="detail-head">TS</td>
+                  <td style="padding: 1px" class="detail-head">Seller</td>
+                  <td style="padding: 1px; width: 80px" class="detail-head">Start Price</td>
+                  <td style="padding: 1px; width: 80px" class="detail-head">End Price</td>
+                  <td style="padding: 1px" class="detail-head">Start Date</td>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="padding: 1px"><a href="/players/{{transfer.player_id._str}}">{{{transfer.player.name}}}</a></td>
+                    <td style="padding: 1px">{{dotify transfer.player.age}}</td>
+                    <td style="padding: 1px">{{dotify transfer.player.ev}}</td>
+                    <td style="padding: 1px">{{transfer.player.workrate}}</td>
+                    <td style="padding: 1px">{{transfer.player.experience}}</td>
+                    <td style="padding: 1px">{{transfer.player.ts}}</td>
+                    <td style="padding: 1px"><a href="/teams/{{transfer.seller_id._str}}">Seller</a></td>
+                    <td style="padding: 1px">{{dotify transfer.price.start}}</td>
+                    <td style="padding: 1px">{{dotify transfer.price.end}} {{{wasPriceEdited}}}</td>
+                    <td style="padding: 1px">{{formatDate transfer.timestamps.listing}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            {{> TransferFlag transferID=this.transferID}}
+          </div>
+
+          {{#if isAdmin}}
+            {{> AdminTransferActions transfer=reactiveTransfer isActive=isActive}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="card blue" style="margin-bottom: 5px">
+        <div class="card-content white-text" style="padding: 5px 0px 15px 0px; text-align: center">
+          <div style="margin-top: 12px" class="row">
+            <div class="col-xs-12">
+              <table class="table bids-table table-condensed table-striped">
+                <thead style="font-weight: 800">
+                  <tr>
+                    <td class="bids-first-td">Bidder</td>
+                    <td>Sum</td>
+                    <td>Date</td>
+                    {{#if isAdmin}}
+                        <td>Actions</td>
+                    {{/if}}
+                  </tr>
+                </thead>
+                <tbody>
+                {{#each bids}}
+                  <tr>
+                    <td class="bids-first-td"><a style="color: #ffab40!important" href="/teams/{{this.bidder_id._str}}">{{this.bidder_name}}</a></td>
+                    <td>{{dotify this.bid}}</td>
+                    <td>{{formatDate this.timestamp}}</td>
+                    {{#if isAdmin}}
+                      <td>{{> BidPenalties bid=this transfer=transfer}}</td>
+                    {{/if}}
+                  </tr>
+                {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

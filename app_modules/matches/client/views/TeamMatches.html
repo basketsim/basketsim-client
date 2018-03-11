@@ -1,0 +1,15 @@
+<template name="TeamMatches">
+  <div class="card white">
+    <div class="card-image-header team-matches">
+      <div class="card-title">Matches</div>
+    </div>
+    <div class="card-content half-side-padding black-text">
+      <div class="row">
+        {{>Matches matches=matches ownTeam=getTeam display=childDiplayOptions}}
+      </div>
+    </div>
+    <div class="card-action">
+      {{{toggleMatches}}}
+    </div>
+  </div>
+</template>
