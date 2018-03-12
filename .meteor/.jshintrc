@@ -1,0 +1,17 @@
+{
+	"globals": {
+		"require": true,
+		"setInterval": true,
+		"window": true,
+		"module": true,
+		"console": true,
+		"describe": true,
+		"beforeEach": true,
+		"afterEach": true,
+		"it": true,
+		"document":true,
+		"validthis": true,
+		"clearInterval": true
+	},
+	"globalstrict": true
+}
